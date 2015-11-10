@@ -7,6 +7,8 @@ var io = require('socket.io').listen(server);
 var ioConn = require('./lib/io.js')(io);
 var heroes = require('./setup/heroes.js');
 var runAll = require('./lib/generateStats.js');
+var path = require('path');
+global.appRoot = path.resolve(__dirname);
 
 
 //-- App Config --//

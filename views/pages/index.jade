@@ -2,8 +2,8 @@ doctype html
 html
     head
         meta(charset="utf-8")
-        meta(description="OverMatch is a community-driven meta-game for Blizzard's Overwatch.")
         title OverMatch: Community-Driven Overwatch Stats
+        meta(description="OverMatch is a community-driven meta-game for Blizzard's Overwatch.")
         meta(name="viewport", content="width=device-width, initial-scale=1")
         link(rel="stylesheet", href="/stylesheets/rangeslider.css")
         link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css")
@@ -22,7 +22,6 @@ html
                         p OverMatch
                     #subtitle.row
                         p Community-Driven Overwatch Stats
-
 
             #loading-div.row.text-center.shadow-top.soft-bg
                 p Getting next match
@@ -57,7 +56,6 @@ html
                             .row
                                 #vs-opponent-name.col-xs-12
                     .row.matchup-slider.shadow-bottom.soft-bg
-                        
 
             #team-game-div.row
                 .col-xs-12.text-center
@@ -90,8 +88,6 @@ html
                                 #team-friend-name.col-xs-12
                     .row.matchup-slider.shadow-bottom.soft-bg
 
-                        
-
             #solo-game-div.row
                 .col-xs-12.text-center
                     .row.matchup-title.shadow-top.soft-bg
@@ -122,9 +118,6 @@ html
                             .row
                                 #solo-map-name.col-xs-12
                     .row.matchup-slider.shadow-bottom.soft-bg
-                        
-                        
-
 
             #menu.row.text-center
                 #hero-stats-btn.col-xs-4.menu-option.bigmenu-selected
@@ -147,9 +140,7 @@ html
                 .col-xs-3
                 #hero-stats-name.col-xs-6.text-center
 
-
             #hero-stats.row.text-center.soft-bg.shadow-top
-
             
                 #hero-stats-menu.row
 
@@ -169,26 +160,23 @@ html
                     .col-xs-0.col-md-2
                     #hero-stats-table.col-xs-12.col-md-8
 
-
             #pick-hero-after.row.shadow-bottom
-
             
             #copyright.row.text-center
                 .col-xs-12
                     p ©2015 Blizzard Entertainment, Inc. All rights reserved. Overwatch is a trademark of Blizzard Entertainment, Inc.
 
 
-
         script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
         script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
         script(src="//cdn.socket.io/socket.io-1.2.0.js")
         script(src="js/globals.js")        
-        script(src="js/heroes.js")        
-        script(src="js/maps.js")        
+        script(src="js/data/heroes.js")        
+        script(src="js/data/maps.js")        
         script(src="js/socket.js")
-        script(src="js/rangeslider.min.js")
-        script(src="js/vsGame.js")
-        script(src="js/soloGame.js")
-        script(src="js/teamGame.js")
+        script(src="js/libs/rangeslider.min.js")
+        script(src="js/game/opponents_game.js")
+        script(src="js/game/maps_game.js")
+        script(src="js/game/friends_game.js")
         script(src="js/stats.js")
         script(src="js/main.js")
