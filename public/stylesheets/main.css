@@ -1,0 +1,416 @@
+ body {
+	height: 100%;
+	color: #FCF8E3;
+	font: 400 1em Helvetica,sans-serif;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+}
+
+#solo-game-div, #team-game-div, #vs-game-div {
+	display: none;
+	padding: 0;
+}
+
+#header {
+
+}
+
+#beta {
+	padding: 20px;
+	color: orange;
+	font-size: 14px;
+	display: none;
+}
+
+#menu {
+	font-family: OverMatch;
+	font-size: 25px;
+	padding: 25px 0;
+	padding-bottom: 15px;
+	line-height: 30px;
+}
+
+
+#loading-div {
+	height: 308px;
+	line-height: 328px;
+	vertical-align:middle;
+	font-family: OverMatch;
+	font-size: 60px;
+	color: orange;
+}
+
+#loading-div-bottom {
+	height: 61px;
+	margin-right: -15px;
+    margin-left: -15px;
+}
+
+#loading-spacer {
+	height: 368px;
+	line-height: 308px;
+	vertical-align:middle;
+	font-family: OverMatch;
+	font-size: 60px;
+	color: orange;
+	
+}
+
+.soft-bg {
+	background-color: rgba(80, 80, 80, 0.28);
+}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1000px;
+    }
+}
+
+.row {
+	padding: 10px 0;
+}
+
+.container {
+	background-color: #3C3C3C;
+	background-image: url(/images/backgrounds/dark_geometric.png);
+	background-repeat: repeat;
+	/*width: 1000px;*/	
+
+   -moz-box-shadow:    0 0 10px #000000;
+   -webkit-box-shadow: 0 0 10px #000000;
+   box-shadow:         0 0 10px #000000;
+}
+
+@font-face {
+    font-family: OverMatch;
+    src: url(/fonts/big_noodle_titling_oblique.ttf);
+}
+
+
+#title {
+	font-family: OverMatch;
+	font-size: 80px;
+	padding:0;
+}
+
+#subtitle {
+	font-family: OverMatch;
+	font-size: 25px;
+	padding:0;
+}
+
+.matchup-title {
+	font-size: 16px;
+	padding: 20px 0;
+	padding-top: 30px;
+}
+
+.shadow-top {
+	-moz-box-shadow:    inset 1px 5px 12px -6px  #000000;
+	   -webkit-box-shadow: inset 1px 5px 12px -6px  #000000;
+	   box-shadow:         inset 1px 5px 12px -6px  #000000;
+}
+
+.shadow-bottom {
+	-moz-box-shadow:    inset 1px -5px 12px -6px  #000000;
+	   -webkit-box-shadow: inset 1px -5px 12px -6px  #000000;
+	   box-shadow:         inset 1px -5px 12px -6px  #000000;
+}
+
+.matchup-slider {
+	font-size: 20px;
+	padding: 20px 0;
+	padding-top: 0px;
+}
+
+
+.hero-subtitle {
+	font-family: OverMatch;
+	font-size: 30px;
+	color: rgb(108, 220, 255); 
+}
+
+.hero {
+	color: rgb(108, 220, 255);
+}
+
+.opponent-subtitle {
+	font-family: OverMatch;
+	font-size: 30px;
+	color: red;
+}
+
+.opponent {
+	color: red;
+}
+
+.map-subtitle {
+	font-family: OverMatch;
+	font-size: 26px;
+	color: orange;
+}
+
+.map, .strat {
+	color: orange;
+}
+
+.map-img img {
+	width: 80%;
+	max-width: 190px;
+	-moz-box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.46);
+   -webkit-box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.46);
+	box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.46);
+}
+
+.map-strat {
+	font-family: OverMatch;
+	font-size: 26px;
+	color: orange;
+}
+
+.friend-subtitle {
+	font-family: OverMatch;
+	font-size: 30px;
+	color: rgb(108, 220, 255);
+}
+
+.friend {
+	color: rgb(108, 220, 255);
+}
+
+
+.slide-num {
+	font-family: OverMatch;
+	font-size: 50px;
+}
+
+.rangeslider__fill {
+  background-color: rgba(255, 165, 0, 0.68);;
+
+}
+
+.rangeslider {
+	background-color: rgba(230, 230, 230, 0.1)
+}
+
+.slider-div {
+	padding-bottom: 10px;
+}
+
+.spacer {
+	height: 50px;
+}
+
+.slide-quote {
+	font-size: 14px;
+	padding: 0px 20px;
+	/* margin-bottom: 60px; */
+	min-height: 70px;
+}
+
+
+.char-img {
+	margin: 0 auto;
+	border-bottom: 0 none;
+	-moz-box-shadow:  0px 3px 9px rgba(0, 0, 0, 0.46);
+	  -webkit-box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.46);
+	box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.46);
+	width: 60%;
+}
+
+.char-img img {
+	width: 100%;
+	max-width: 200px;
+
+}
+
+.btn {
+	color: black;
+	padding: 2px 12px;
+    border-radius: 3px;
+    background-color: rgb(204, 203, 203)
+}
+
+#pick-hero {
+	background-color: rgba(80, 80, 80, 0.28);
+	padding: 0 50px;
+}
+
+#pick-hero-before {
+	background-color: rgba(80, 80, 80, 0.28);
+}
+
+#pick-hero-after {
+	background-color: rgba(80, 80, 80, 0.28);
+}
+
+.pick-hero-div {
+	display: inline-block;
+	margin: 15px 25px;
+	/* padding: 0 30px; */
+}
+
+.pick-hero-thumb img{
+	width: 70px;
+	margin: 0 auto;
+	border-bottom: 0 none;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+}
+
+.pick-hero-name {
+	margin-top: 10px;
+	font-family: OverMatch;
+	font-size: 20px;
+}
+
+.next-btn-div {
+	padding-top: 10px;
+	padding-bottom: 0;
+}
+
+.menu-option {
+	cursor:pointer;
+}
+
+.menu-option:hover {
+	color:orange;
+}
+
+.pick-hero-thumb:hover {
+	cursor:pointer;
+}
+
+.pick-hero-thumb img:hover {
+	background-color:rgba(0,0,0,0.5);
+}
+
+#status-div {
+	font-size: 13px;
+	padding: 10px 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-family: OverMatch;
+	font-size: 18px;
+}
+
+#hero-stats {
+	display:none;
+}
+
+#hero-stats-title {
+	display: none;
+}
+
+#hero-stats-name {
+	font-family: OverMatch;
+	font-size: 50px;
+	line-height: 85px;
+}
+
+#hero-stats-name img {
+	height: 85px;
+	margin-right: 20px;
+}
+
+#hero-stats-back {
+	font-size: 30px;
+    padding-left: 30px;
+    font-family: OverMatch;
+}
+
+.table-row {
+	margin: 10px 0;
+	background-color: rgba(255, 255, 255, 0.06);
+	border-radius: 4px;
+}
+
+.table-row img {
+	width: 45px;
+}
+
+#hero-stats-menu {
+	margin-top: 5px;
+}
+
+.menu-btn {
+    background-color: rgba(0, 196, 255, 0.32);
+    width: 150px; 
+    height: 35px;
+    border-radius: 4px;
+    line-height: 35px;
+    font-size: 14px;
+    margin: 15px 25px;
+    cursor: pointer;
+    border: 1px solid #D4F5FF;;
+    display: inline-block;
+    color: #D4F5FF;
+    font-weight: bold;
+}
+
+.menu-btn:hover {
+	background-color: rgba(95, 218, 255, 0.44);
+	color: white;
+}
+
+
+.row-count, .row-avg, .row-votes, .row-name {
+	font-family: OverMatch;
+	font-size:25px;
+	line-height: 45px;
+}
+
+.row-map-name {
+	line-height: 45px;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+
+.row-map-name-title {
+	font-family: OverMatch;
+	line-height: 45px;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+
+.bigmenu-selected {
+	font-size: 30px;
+
+}
+
+.menu-selected {
+    background-color: rgba(130, 226, 255, 0.75);
+    color: white;
+}
+
+
+.glyphicon-warning-sign {
+	color: yellow;
+	font-size:;
+}
+
+.warning {
+	color:red;
+}
+
+.row-desc {
+	font-size:14px;
+	line-height: 45px;
+}
+
+.header-row {
+	background-color: rgba(255, 255, 255, 0.15);
+}
+
+.map-thumb {
+	top: 6px;
+}
+
+#copyright {
+	font-size: 12px;
+    color: #989898;
+}
+
+.pic-selected {
+	background-color: black;
+}

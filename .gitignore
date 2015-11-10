@@ -1,0 +1,6 @@
+node_modules/
+server.key
+server.pass.key
+.DS_Store
+public/.DS_Store
+env.js
