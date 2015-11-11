@@ -44,7 +44,7 @@ var soloGame = (function () {
         $("#solo-slide-val").html(5);
         $("#solo-hero-img").html('<img src="/images/thumbnails/' + hero.tag + '.png" />');
         $("#solo-map-img").html('<img src="/images/maps/' + opponent.tag + '.jpg" />');
-        me.setQuote(5, hero.name);
+        me.setQuote(5, '');
     }
 
 

@@ -99,9 +99,10 @@
 }
 
 .matchup-title {
-	font-size: 16px;
+	font-size: 14px;
 	padding: 20px 0;
 	padding-top: 30px;
+	font-weight: bold;
 }
 
 .shadow-top {
@@ -131,6 +132,7 @@
 
 .hero {
 	color: rgb(108, 220, 255);
+	font-weight: bold;
 }
 
 .opponent-subtitle {
@@ -141,6 +143,7 @@
 
 .opponent {
 	color: red;
+	font-weight: bold;
 }
 
 .map-subtitle {
@@ -151,6 +154,7 @@
 
 .map, .strat {
 	color: orange;
+	font-weight: bold;
 }
 
 .map-img img {
@@ -233,6 +237,10 @@
 #pick-hero, #pick-team {
 	background-color: rgba(80, 80, 80, 0.28);
 	padding: 0 50px;
+}
+
+#pick-team {
+	display: none;
 }
 
 #pick-hero-before {
@@ -415,6 +423,57 @@
 	background-color: black;
 }
 
-.hero-dropdown-div {
+.hero-dropdown-div, .map-dropdown-div {
 	padding: 20px 40px;
+}
+
+.pick-instructions {
+	font-size: 14px;
+}
+
+.dropdown-pic, #map-dropdown-pic {
+	height: 75px;
+	font-size:60px;
+	line-height:75px;
+	font-family: overmatch;
+	color: red;
+}
+
+#map-dropdown-pic {
+	color: orange;
+}
+
+#map-dropdown-pic img, .dropdown-pic img {
+	height: 100px;
+	-moz-box-shadow:  0px 3px 9px rgba(0, 0, 0, 0.46);
+	  -webkit-box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.46);
+	box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.46);
+}
+
+.hero-dropdown, .map-dropdown, .days-dropdown {
+	background: transparent;
+    border-radius: 2px;
+    color: white;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.map-dropdown {
+	width: 100%;
+}
+
+.hero-dropdown > option, .map-dropdown > option, .days-dropdown > option {
+	color:black;
+	background-color: white;
+}
+
+#team-days-header {
+	font-size: 14px;
+	height: 75px;
+	line-height: 75px;
+	top: 50px;
+}
+
+#team-submit {
+	margin: 0;
 }

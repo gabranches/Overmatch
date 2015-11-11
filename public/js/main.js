@@ -71,15 +71,14 @@ function nextGame () {
 		    }, 300);
 		}, 300);
 	}, 300);
-	
-		
-
 }
 
 
 function populateDropdowns() {
 
-	var heroesSorted = heroes.sort(function(a, b) {
+	// Sort heroes array
+	heroesSorted = heroes.slice();
+	heroesSorted.sort(function(a, b) {
 	    var textA = a.tag.toUpperCase();
 	    var textB = b.tag.toUpperCase();
 	    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
@@ -87,6 +86,19 @@ function populateDropdowns() {
 
 	heroesSorted.forEach(function(hero) {
 		$(".hero-dropdown").append('<option value="'+hero.id+'">'+hero.name+'</option>');
+	});
+
+
+	// Sort maps array
+	mapsSorted = maps.slice();
+	mapsSorted.sort(function(a, b) {
+	    var textA = a.tag.toUpperCase();
+	    var textB = b.tag.toUpperCase();
+	    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+	});
+
+	mapsSorted.forEach(function(map) {
+		$(".map-dropdown").append('<option value="'+map.id+'">'+map.name+ ' (' + map.strat + ')</option>');
 	});
 
 }

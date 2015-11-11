@@ -16,8 +16,6 @@ html
             .row
                 #header.col-xs-12.text-center
                     #status-div
-                        #active-count
-                            p Active users: 
                     #title.row 
                         p OverMatch
                     #subtitle.row
@@ -130,19 +128,64 @@ html
             #pick-hero-before.row.shadow-top
 
             #pick-hero.row.text-center
-                each hero in heroes
-                    .pick-hero-div
-                        .pick-hero-thumb(title="#{hero.name}" data-id="#{hero.id}")
-                            img(src="/images/thumbnails/#{hero.tag}.png")
-                        .pick-hero-name
+                .col-xs-12
+                    .row
+                        #instructions.col-xs-12.text-left.pick-instructions
+                            p <span class="hero">Pick a hero</span> to see their matchups, counters, teammates and map synergies:
+                .col-xs-12
+                    .row
+                    each hero in heroes
+                        .pick-hero-div
+                            .pick-hero-thumb(title="#{hero.name}" data-id="#{hero.id}")
+                                img(src="/images/thumbnails/#{hero.tag}.png")
+                            .pick-hero-name
 
             #pick-team.row.text-center
                 .col-xs-12
                     .row
+                        #instructions1.col-xs-12.text-left.pick-instructions
+                    .row
                         each val in ["s1","s2","s3","s4","s5","s6"]
-                            div(id=val).col-xs-4.hero-dropdown-div
-                                select.form-control.hero-dropdown
-                                    option(value="" disabled selected) Choose a hero...
+                            div(id=val).col-xs-12.col-sm-6.col-md-4.hero-dropdown-box
+                                .row
+                                    .col-xs-12.dropdown-pic
+                                        p ?
+                                .row
+                                    .col-xs-12.hero-dropdown-div.text-center
+                                        select.form-control.hero-dropdown
+                                            option(value="" selected) Choose a hero...
+                    .row
+                        #instructions2.col-xs-12.text-left.pick-instructions
+                    .row
+                        .col-xs-12.col-sm-6.col-md-4.map-dropdown-box
+                            .row
+                                #map-dropdown-pic.col-xs-12
+                                    p ?
+                            .row
+                                .col-xs-12.map-dropdown-div.text-center
+                                    select.form-control.map-dropdown
+                                        option(value="" selected) Choose a map...
+                        .col-xs-12.col-sm-6.col-md-4.map-dropdown-box
+                            .row
+                                #team-days-header.col-xs-12
+                                    p Use data from the last:
+                            .row
+                                .col-xs-12.map-dropdown-div.text-center
+                                    select#team-days.form-control.days-dropdown
+                                        option(value="7") 7 days
+                                        option(value="30" selected) 30 days
+                                        option(value="60") 60 days
+                        .col-xs-12.col-sm-6.col-md-4.map-dropdown-box
+                            .row
+                                #team-days-header.col-xs-12
+                            .row
+                                .col-xs-12.map-dropdown-div.text-center
+                                    #team-submit.menu-btn
+                                        p SUBMIT
+
+                                    
+
+
 
             #hero-stats-title.row
                 .col-xs-3
@@ -181,10 +224,11 @@ html
         script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
         script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
         script(src="//cdn.socket.io/socket.io-1.2.0.js")
-        script(src="js/socket.js")
         script(src="js/libs/rangeslider.min.js")
+        script(src="js/stats.js")
+        script(src="js/team.js")
+        script(src="js/socket.js")
         script(src="js/game/opponents_game.js")
         script(src="js/game/maps_game.js")
         script(src="js/game/friends_game.js")
-        script(src="js/stats.js")
         script(src="js/main.js")

@@ -8,6 +8,9 @@ var settings = {
 
 
 var heroStats = {};
+var heroesSorted = {};
+
+var mapsSorted = {};
 
 var backgrounds = ['anubis', 'dorado', 'gibraltar',
 				   'hanamura', 'hanamura2', 'kingsrow',

@@ -109,6 +109,8 @@ var stats = (function () {
     // Big menu buttons
 
     $('#hero-stats-btn').click(function () {
+        $("#pick-hero").show();
+        $("#pick-team").hide();
         clearBigMenuButtons();
         $(this).addClass('bigmenu-selected');
     });

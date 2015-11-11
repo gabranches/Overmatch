@@ -43,7 +43,7 @@ var teamGame = (function () {
         $("#team-slide-val").html(5);
         $("#team-hero-img").html('<img src="/images/thumbnails/' + hero.tag + '.png" />');
         $("#team-friend-img").html('<img src="/images/thumbnails/' + opponent.tag + '.png" />');
-        me.setQuote(5, hero.name);
+        me.setQuote(5, '');
     }
 
 
