@@ -65,7 +65,6 @@ var stats = (function () {
     me.populateMatchups = function (type) {
         $("#hero-stats-table").empty();
         me.writeHeader(type);
-        clearMenuButtons();
         $('#' + type + '-btn').addClass('menu-selected');
         
         for (var i=0; i < heroStats[type].length; i++) {
@@ -76,6 +75,7 @@ var stats = (function () {
 
     // Populate results for the hero stats section
     me.populateHeroStats = function (data) {
+        stat_type = 'matchups';
         $('#hero-stats').show();
         $("#hero-stats-menu").show();
         $('#hero-stats-name').append('<img src="/images/thumbnails/'+data.hero.tag+'.png" />');
@@ -115,6 +115,7 @@ var stats = (function () {
     //-- Event Handlers --//
 
     $(".pick-hero-thumb").click(function () {
+        clearMenuButtons();
         clearPicSelection();
         $(this).addClass('pic-selected');
         hero_id = $(this).attr("data-id");
@@ -147,6 +148,7 @@ var stats = (function () {
     // Submenu buttons
 
     $("#matchups-btn").click(function () {
+        clearMenuButtons();
         $(this).addClass('menu-selected');
         hero = heroes[hero_id].name;
         stat_type = 'matchups';
@@ -154,6 +156,7 @@ var stats = (function () {
     });
 
     $("#counters-btn").click(function () {
+        clearMenuButtons();
         $(this).addClass('menu-selected');
         hero = heroes[hero_id].name;
         stat_type = 'counters';
@@ -161,6 +164,7 @@ var stats = (function () {
     });
 
     $("#teammates-btn").click(function () {
+        clearMenuButtons();
         $(this).addClass('menu-selected');
         hero = heroes[hero_id].name;
         stat_type = 'friends';
@@ -168,6 +172,7 @@ var stats = (function () {
     });
 
     $("#maps-btn").click(function () {
+        clearMenuButtons();
         $(this).addClass('menu-selected');
         hero = heroes[hero_id].name;
         stat_type = 'maps';
