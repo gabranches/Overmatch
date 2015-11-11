@@ -57,25 +57,35 @@ var teamModule = (function () {
 
     $('#team-submit').click(function () {
 
-        if ($('.map-dropdown').val() != '') {
-            $(this).html('Submitted!');
-        } else {
+        $('.hero-dropdown').each(function () {
+            if ($(this).val() != '') {
+                me.picks.team.push($(this).val());
+            }
+        })
+
+        if ($('.map-dropdown').val() == '') {
+            // Ask for map input
             $(this).html('Pick a map!');
+        } else if (me.picks.team.length === 0) {
+            // Ask for hero input
+            $(this).html('Pick a hero!');
+        } else {
+            // Submit data
+            $(this).html('Submitted!');
+
+            me.picks.map = $('.map-dropdown').val();
+            me.picks.days = $('.days-dropdown').val();
+
+            socketHelper.emit('team-picks', {client: client, picks: me.picks});
+            me.picks.team = [];
+            $("#beta").show();
+
         }
         
         setTimeout(function () {
             $('#team-submit').html('Submit');
         }, 3000);
 
-        $('.hero-dropdown').each(function () {
-            me.picks.team.push($(this).val());
-        })
-
-        me.picks.map = $('.map-dropdown').val();
-        me.picks.days = $('.days-dropdown').val();
-
-        socketHelper.emit('team-picks', {client: client, picks: me.picks});
-        me.picks.team = [];
     });
 
 

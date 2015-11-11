@@ -11,7 +11,7 @@ var vsGame = (function () {
         "Most of the time, I would not pick [hero] against [opponent].",
         "I would not pick [hero] too often against [opponent].",
         "I may pick [hero] against [opponent], but I think I will be at a slight disadvantage.",
-        "I don't know if [hero] is good against [opponent] / I think they are neural.",
+        "I don't know if [hero] is good against [opponent].<br />I think they are neural.<br />No opinion.",
         "I may pick [hero] against [opponent] because of a slight advantage.",
         "I would pick [hero] often against [opponent].",
         "I would pick [hero] most of the time against [opponent].",

@@ -48,6 +48,12 @@ var stats = (function () {
                          '<div class="col-xs-2 row-name text-center">Score</div>' +
                          '<div class="col-xs-3 row-name text-center">Votes</div></div>');
 
+        } else if (stat_type === 'team') {
+            table.append('<div class="table-row header-row row"><div class="col-xs-1 row-name">Rank</div>' + 
+                         '<div id="row-map-type" class="col-xs-6 row-name text-center"></div>' +
+                         '<div class="col-xs-2 row-name text-center">Score <span title="Score = WeightedAverage(HeroMatchupScores) * HeroMapScore" class="glyphicon glyphicon-info-sign"></span></div>' +
+                         '<div class="col-xs-3 row-name">Votes</div></div>');
+            $("#row-map-type").html($('#team-map option:selected').text());
         } else {
             table.append('<div class="table-row header-row row"><div class="col-xs-1 row-name">Rank</div>' + 
                          '<div class="col-xs-2 row-name"></div>' +
@@ -68,12 +74,24 @@ var stats = (function () {
 
     }
 
+    // Populate results for the hero stats section
     me.populateHeroStats = function (data) {
-        
         $('#hero-stats').show();
+        $("#hero-stats-menu").show();
         $('#hero-stats-name').append('<img src="/images/thumbnails/'+data.hero.tag+'.png" />');
         $('#hero-stats-name').html(heroStats.hero.name);
         me.populateMatchups(stat_type);
+        
+    }
+
+    // Populate results for the enemy counters and team picks section
+    me.populateTeamStats = function (data) {
+        stat_type = 'team';
+        $('#hero-stats').show();
+        $('#hero-stats-title').show();
+        $('#hero-stats-name').html('Results');
+        $("#hero-stats-menu").hide();
+        me.populateMatchups('team');
         
     }
 

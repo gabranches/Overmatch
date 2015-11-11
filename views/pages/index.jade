@@ -118,12 +118,14 @@ html
                     .row.matchup-slider.shadow-bottom.soft-bg
 
             #menu.row.text-center
-                #hero-stats-btn.col-xs-4.menu-option.bigmenu-selected
+                #hero-stats-btn.col-xs-3.menu-option.bigmenu-selected
                     p Hero Stats
-                #team-counter-btn.col-xs-4.menu-option
-                    p Enemy Team Counter
-                #friendly-team-btn.col-xs-4.menu-option
-                    p Friendly Team Pick
+                #map-stats-btn.col-xs-3.menu-option.menu-option
+                    p Map Stats
+                #team-counter-btn.col-xs-3.menu-option
+                    p Enemy Counters
+                #friendly-team-btn.col-xs-3.menu-option
+                    p Team Picks
 
             #pick-hero-before.row.shadow-top
 
@@ -163,7 +165,7 @@ html
                                     p ?
                             .row
                                 .col-xs-12.map-dropdown-div.text-center
-                                    select.form-control.map-dropdown
+                                    select#team-map.form-control.map-dropdown
                                         option(value="" selected) Choose a map...
                         .col-xs-12.col-sm-6.col-md-4.map-dropdown-box
                             .row
@@ -174,7 +176,6 @@ html
                                     select#team-days.form-control.days-dropdown
                                         option(value="7") 7 days
                                         option(value="30" selected) 30 days
-                                        option(value="60") 60 days
                         .col-xs-12.col-sm-6.col-md-4.map-dropdown-box
                             .row
                                 #team-days-header.col-xs-12
@@ -197,16 +198,16 @@ html
 
                     .col-xs-12.text-center
                         #matchups-btn.menu-btn
-                            p MATCHUPS
+                            p Matchups
                         #counters-btn.menu-btn
-                            p COUNTERS
+                            p Counters
                         #teammates-btn.menu-btn
-                            p TEAMMATES
+                            p Teammates
                         #maps-btn.menu-btn
-                            p MAPS
+                            p Maps
   
                 #beta.row.text-center
-                    p Overmatch currently in Beta. Results may be inaccurate until launch. Thank you for helping! 
+                    p Overmatch currently in Beta. Results will most likely be inaccurate until the site collects enough data. Thank you for helping! 
                 .row
                     .col-xs-0.col-md-2
                     #hero-stats-table.col-xs-12.col-md-8

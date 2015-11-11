@@ -11,7 +11,7 @@ var soloGame = (function () {
         "I think [hero] is weak in this situation.",
         "I think [hero] has some flaws in this situation.",
         "I think [hero] might not be good here, but I'll try to make it work.",
-        "I don't know if [hero] is good or bad in this situation.",
+        "I don't know if [hero] is good or bad in this situation.<br />No opinion.",
         "I think [hero] might be good here.",
         "I would pick [hero] often.",
         "I would pick [hero] most of the time",

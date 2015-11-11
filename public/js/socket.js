@@ -56,6 +56,13 @@ var socketHelper = (function () {
         stats.populateHeroStats(data);
     });
 
+    socket.on('team-picks-data', function (data){
+        heroStats['team'] = data;
+        stats.populateTeamStats(data);
+    });
+
+
+
 
     return me;
 

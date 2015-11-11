@@ -11,7 +11,7 @@ var teamGame = (function () {
         "They syngergize poorly and are actually a detriment to the team.",
         "They synergize poorly, but may still be playable together ",
         "They may have synergy, but only in specific situations.",
-        "I don't know if they work well together. / I think are neutral.",
+        "I don't know if they work well together.<br />I think are neutral.<br />No opinion.",
         "They may have a bit of synergy in common situations.",
         "They have good synergy sometimes.",
         "They have very good synergy.",
