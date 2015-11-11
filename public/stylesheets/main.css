@@ -31,7 +31,7 @@
 
 
 #loading-div {
-	height: 276px;
+	height: 332px;
 	line-height: 317px;
 	font-family: OverMatch;
 	font-size: 60px;
@@ -483,4 +483,40 @@
 
 .glyphicon-info-sign {
 	font-size: 14px;
+}
+
+#last-match-table {
+	background-color: rgba(255, 255, 255, 0.06);
+	font-size: 16px;
+	line-height: 46px;
+	font-weight: bold;
+	border-radius: 4px;
+}
+
+#last-match-table img {
+	width: 45px;
+	margin: 0 5px;
+}
+
+#last-match-table div {
+	top: 5px;
+}
+
+#slider-div {
+	padding-bottom: 25px;
+}
+
+#last-match {
+	display: none;
+}
+
+#disconnect-alert {
+	display: none;
+	position: fixed;
+	width:200px;
+	top:20px;
+	left: 20px;
+	font-family: arial;
+	text-shadow: none;
+	font-size:12px;
 }

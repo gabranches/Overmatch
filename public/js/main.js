@@ -67,6 +67,7 @@ function nextGame () {
 		    	    $('#loading-div p').append('.');
 			    	    setTimeout(function() {
 			    	        attachGame(game);
+			    	        
 		        }, 300);
 		    }, 300);
 		}, 300);

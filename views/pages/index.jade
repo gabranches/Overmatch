@@ -12,6 +12,8 @@ html
         link(rel="icon" href="/favicon.ico")
 
     body
+        #disconnect-alert.alert.alert-danger
+            p Oops! We've lost your connection. Please refresh the page.
         .container
             .row
                 #header.col-xs-12.text-center
@@ -23,9 +25,8 @@ html
 
             #loading-div.row.text-center.shadow-top.soft-bg
                 p Getting next match
-            #loading-div-bottom.shadow-bottom.soft-bg
 
-            #vs-game-div.row.soft-bg
+            #vs-game-div.row
                 .col-xs-12.text-center
                     .row.matchup-title.shadow-top.soft-bg
                         #vs-title.col-xs-12
@@ -48,14 +49,13 @@ html
                                 #vs-opponent-img.char-img
                             .row
                                 #vs-opponent-name.col-xs-12
-                    .row.soft-bg
+                    #slider-div.row.soft-bg
                         .col-xs-1.col-md-4
                         #vs-slide-div.col-xs-7.col-md-4
                             input(id="vs-slider" type="range" min="0" max="10" step="1")
                         .col-xs-3.next-btn-wrapper
                             #vs-next.next-btn-div.text-center
                                 button(class="btn" id="vs-next") Submit Vote
-                    .row.matchup-slider.shadow-bottom.soft-bg
 
             #team-game-div.row
                 .col-xs-12.text-center
@@ -81,15 +81,14 @@ html
                             .row
                                 #team-friend-name.col-xs-12
 
-                    .row.soft-bg
+                    #slider-div.row.soft-bg
                         .col-xs-1.col-md-4
                         #team-slide-div.col-xs-7.col-md-4
                             input(id="team-slider" type="range" min="0" max="10" step="1")
                         .col-xs-3.next-btn-wrapper
                             #team-next.next-btn-div.text-center
                                 button(class="btn" id="team-next") Submit Vote
-                            
-                    .row.matchup-slider.shadow-bottom.soft-bg
+
 
             #solo-game-div.row
                 .col-xs-12.text-center
@@ -115,15 +114,24 @@ html
                             .row
                                 #solo-map-name.col-xs-12
 
-                    .row.soft-bg
+                    #slider-div.row.soft-bg
                         .col-xs-1.col-md-4
                         #solo-slide-div.col-xs-7.col-md-4
                             input(id="solo-slider" type="range" min="0" max="10" step="1")
                         .col-xs-3.next-btn-wrapper
                             #solo-next.next-btn-div.text-center
                                 button(class="btn" id="solo-next") Submit Vote
-
-                    .row.matchup-slider.shadow-bottom.soft-bg
+                    
+            
+            #last-match.row.soft-bg.last-match-row
+                .col-xs-0.col-md-2
+                #last-match-table.col-xs-12.col-md-8
+                    #last-match-results.col-xs-3
+                        p Last Match:
+                    #last-match-pics.col-xs-3
+                    #last-match-score.col-xs-3
+                    #last-match-votes.col-xs-3
+            .row.matchup-slider.shadow-bottom.soft-bg
 
             #menu.row.text-center
                 #hero-stats-btn.col-xs-3.menu-option.bigmenu-selected

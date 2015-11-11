@@ -62,6 +62,23 @@ var stats = (function () {
         }
     }
 
+    me.populateLastMatch = function (data) {
+        var picsHtml = '<img style="border: 1px solid rgba(108, 220, 255, 0.36);" src="/images/thumbnails/'+heroes[data.hero].tag+'.png" />';
+
+        if (data.type === 'maps') {
+            var picsHtml = picsHtml + '<img style="border: 1px solid rgba(255, 165, 0, 0.55)" src="/images/maps/'+maps[data.opponent].tag+'.jpg" />';
+        } else if (data.type === 'matchups') {
+            var picsHtml = picsHtml + '<img style="border: 1px solid rgba(255, 0, 0, 0.44);" src="/images/thumbnails/'+heroes[data.opponent].tag+'.png" />';
+        } else {
+            var picsHtml = picsHtml + '<img style="border: 1px solid rgba(108, 220, 255, 0.36);" src="/images/thumbnails/'+heroes[data.opponent].tag+'.png" />';
+        }
+
+        $('#last-match-pics').html(picsHtml);
+        $('#last-match-score').html('Score: ' + data.avg.toFixed(2));
+        $('#last-match-votes').html('Votes: ' + data.num);
+
+    }
+
     me.populateMatchups = function (type) {
         $("#hero-stats-table").empty();
         me.writeHeader(type);

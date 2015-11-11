@@ -33,7 +33,7 @@ var socketHelper = (function () {
         // Check connection
         setInterval(function () {
             if (!(socket.connected)) {
-                alert('Connection lost, please refresh the page.');
+                $('#disconnect-alert').show();
             }
         }, 5000);
     });
@@ -67,6 +67,12 @@ var socketHelper = (function () {
         heroStats['team'] = data;
         stats.populateTeamStats(data);
     });
+
+    socket.on('last-match', function (data){
+        $('#last-match').show();
+        stats.populateLastMatch(data);
+    });
+
 
 
 
