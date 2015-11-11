@@ -2,6 +2,11 @@ var client = {
     socketID: ''
 };
 
+var settings = {
+	days: 7
+};
+
+
 var heroStats = {};
 
 var backgrounds = ['anubis', 'dorado', 'gibraltar',

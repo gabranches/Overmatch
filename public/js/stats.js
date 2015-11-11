@@ -103,7 +103,7 @@ var stats = (function () {
         $("#hero-stats-title").show();
         $("#beta").show();
         hero_id = heroes[hero_id].id;
-        socketHelper.emit('get-all-stats', {hero: hero_id, client: client});
+        socketHelper.emit('get-all-stats', {hero: hero_id, client: client, days: settings.days});
     });
 
     // Big menu buttons
@@ -143,7 +143,7 @@ var stats = (function () {
     $("#teammates-btn").click(function () {
         $(this).addClass('menu-selected');
         hero = heroes[hero_id].name;
-        stat_type = 'teammates';
+        stat_type = 'friends';
         me.populateMatchups(stat_type);
     });
 

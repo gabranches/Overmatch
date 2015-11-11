@@ -230,7 +230,7 @@
     background-color: rgb(204, 203, 203)
 }
 
-#pick-hero {
+#pick-hero, #pick-team {
 	background-color: rgba(80, 80, 80, 0.28);
 	padding: 0 50px;
 }
@@ -413,4 +413,8 @@
 
 .pic-selected {
 	background-color: black;
+}
+
+.hero-dropdown-div {
+	padding: 20px 40px;
 }
