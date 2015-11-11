@@ -59,7 +59,7 @@ var soloGame = (function () {
 
     });
 
-    $("#solo-next").on('click', function() {
+    $("#solo-next .btn").on('click', function() {
         var data = {
             socketID: client.socketID,
             hero: hero.id,

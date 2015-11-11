@@ -57,7 +57,7 @@ var teamGame = (function () {
 
     });
 
-    $("#team-next").on('click', function() {
+    $("#team-next .btn").on('click', function() {
         
         var data = {
             socketID: client.socketID,

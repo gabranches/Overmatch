@@ -29,6 +29,13 @@ var socketHelper = (function () {
         me.getSocketID()
         socket.emit('user-connect', client);
         socket.emit('status-request', client);
+
+        // Check connection
+        setInterval(function () {
+            if (!(socket.connected)) {
+                alert('Connection lost, please refresh the page.');
+            }
+        }, 5000);
     });
 
 

@@ -56,7 +56,7 @@ var vsGame = (function () {
 
     });
 
-    $("#vs-next").on('click', function() {
+    $("#vs-next .btn").on('click', function() {
         var data = {
             socketID: client.socketID,
             hero: hero.id,

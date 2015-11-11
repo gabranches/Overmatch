@@ -31,9 +31,8 @@
 
 
 #loading-div {
-	height: 308px;
-	line-height: 328px;
-	vertical-align:middle;
+	height: 276px;
+	line-height: 317px;
 	font-family: OverMatch;
 	font-size: 60px;
 	color: orange;
@@ -90,6 +89,7 @@
 	font-family: OverMatch;
 	font-size: 80px;
 	padding:0;
+	cursor: pointer;
 }
 
 #subtitle {
@@ -158,10 +158,10 @@
 }
 
 .map-img img {
-	width: 80%;
-	max-width: 190px;
+	width: 64%;
+	max-width: 150px;
 	-moz-box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.46);
-   -webkit-box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.46);
+	-webkit-box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.46);
 	box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.46);
 }
 
@@ -216,15 +216,14 @@
 	margin: 0 auto;
 	border-bottom: 0 none;
 	-moz-box-shadow:  0px 3px 9px rgba(0, 0, 0, 0.46);
-	  -webkit-box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.46);
+	-webkit-box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.46);
 	box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.46);
-	width: 60%;
+	width: 50%;
 }
 
 .char-img img {
 	width: 100%;
-	max-width: 200px;
-
+	/* max-width: 125px; */
 }
 
 .btn {
@@ -270,8 +269,11 @@
 	font-size: 20px;
 }
 
+.next-btn-wrapper {
+	top: -3px;
+}
+
 .next-btn-div {
-	padding-top: 10px;
 	padding-bottom: 0;
 }
 
@@ -452,10 +454,11 @@
 
 .hero-dropdown, .map-dropdown, .days-dropdown {
 	background: transparent;
-    border-radius: 2px;
+    border-radius: 0px;
     color: white;
     width: 75%;
     margin: 0 auto;
+    border: 1px solid #777777;
 }
 
 .map-dropdown {

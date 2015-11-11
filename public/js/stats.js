@@ -51,7 +51,7 @@ var stats = (function () {
         } else if (stat_type === 'team') {
             table.append('<div class="table-row header-row row"><div class="col-xs-1 row-name">Rank</div>' + 
                          '<div id="row-map-type" class="col-xs-6 row-name text-center"></div>' +
-                         '<div class="col-xs-2 row-name text-center">Score <span title="Score = WeightedAverage(HeroMatchupScores) * HeroMapScore" class="glyphicon glyphicon-info-sign"></span></div>' +
+                         '<div class="col-xs-2 row-name text-center">Score <span title="Scores are calculated by taking a weighted average of hero scores with map scores. Map scores have double the weight of one hero score." class="glyphicon glyphicon-info-sign"></span></div>' +
                          '<div class="col-xs-3 row-name">Votes</div></div>');
             $("#row-map-type").html($('#team-map option:selected').text());
         } else {

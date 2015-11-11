@@ -42,17 +42,19 @@ html
                                 #vs-slide-val.slide-num
                             .row
                                 #vs-slide-quote.col-xs-12.slide-quote
-                            .row
-                                #vs-slide-div.col-xs-12
-                                    input(id="vs-slider" type="range" min="0" max="10" step="1")
-                            .row
-                                #vs-next.next-btn-div
-                                    button(class="btn" id="vs-next") Next
+                                
                         #vs-opponent.col-xs-4.col-md-3
                             .row
                                 #vs-opponent-img.char-img
                             .row
                                 #vs-opponent-name.col-xs-12
+                    .row.soft-bg
+                        .col-xs-1.col-md-4
+                        #vs-slide-div.col-xs-7.col-md-4
+                            input(id="vs-slider" type="range" min="0" max="10" step="1")
+                        .col-xs-3.next-btn-wrapper
+                            #vs-next.next-btn-div.text-center
+                                button(class="btn" id="vs-next") Submit Vote
                     .row.matchup-slider.shadow-bottom.soft-bg
 
             #team-game-div.row
@@ -72,18 +74,21 @@ html
                                 #team-slide-val.slide-num
                             .row
                                 #team-slide-quote.col-xs-12.slide-quote
-                            .row
-                                #team-slide-div
-                                    input(id="team-slider" type="range" min="0" max="10" step="1")
-                            .row
-                                #team-next.next-btn-div
-                                    button(class="btn" id="team-next") Next
-                            
+
                         #team-friend.col-xs-4.col-md-3
                             .row
                                 #team-friend-img.char-img
                             .row
                                 #team-friend-name.col-xs-12
+
+                    .row.soft-bg
+                        .col-xs-1.col-md-4
+                        #team-slide-div.col-xs-7.col-md-4
+                            input(id="team-slider" type="range" min="0" max="10" step="1")
+                        .col-xs-3.next-btn-wrapper
+                            #team-next.next-btn-div.text-center
+                                button(class="btn" id="team-next") Submit Vote
+                            
                     .row.matchup-slider.shadow-bottom.soft-bg
 
             #solo-game-div.row
@@ -103,18 +108,21 @@ html
                                 #solo-slide-val.slide-num
                             .row
                                 #solo-slide-quote.col-xs-12.slide-quote
-                            .row
-                                #solo-slide-div.col-xs-12
-                                    input(id="solo-slider" type="range" min="0" max="10" step="1")
-                            .row
-                                #solo-next.next-btn-div
-                                    button(class="btn" id="solo-next") Next
-
+                            
                         #solo-map.col-xs-4.col-md-3
                             .row
                                 #solo-map-img.map-img
                             .row
                                 #solo-map-name.col-xs-12
+
+                    .row.soft-bg
+                        .col-xs-1.col-md-4
+                        #solo-slide-div.col-xs-7.col-md-4
+                            input(id="solo-slider" type="range" min="0" max="10" step="1")
+                        .col-xs-3.next-btn-wrapper
+                            #solo-next.next-btn-div.text-center
+                                button(class="btn" id="solo-next") Submit Vote
+
                     .row.matchup-slider.shadow-bottom.soft-bg
 
             #menu.row.text-center

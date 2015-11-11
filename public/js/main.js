@@ -103,6 +103,10 @@ function populateDropdowns() {
 
 }
 
+$("#title").click(function() {
+	window.location = '/';
+});
+
 $(document).ready(function () {
 	setBackground();
 	nextGame();
