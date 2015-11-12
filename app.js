@@ -23,7 +23,7 @@ app.get('/', function (request, response) {
     response.render('pages/index', {heroes: heroes});
 });
 
-
+runAll();
 // Update db every minute
 var minutes = 1, the_interval = minutes * 60 * 1000;
 setInterval(function() {
