@@ -22,9 +22,14 @@ html
                         p OverMatch
                     #subtitle.row
                         p Community-Driven Overwatch Stats
-            #summary.row
+            .row.before.shadow-top.soft-bg
+            #summary.row.soft-bg
                 .col-xs-12
                     p OverMatch allows players to vote for what they consider good and bad matchups in Overwatch. This data is used to provide rankings for individual matchups, including enemies, teammates, and map strategies. Players can also use the Team Builder to get suggetions on what heroes to pick based on the enemy or friendly team composition. This site was built by a community member, for the community - I am always interested in <a target="_blank" href="https://docs.google.com/forms/d/1Ux5oRuSmXepCxEovF0-MfycIDpkA8iUzFAMEzGXXR2Y/viewform?usp=send_form">feedback</a>!
+            .row.after.shadow-bottom.soft-bg
+            #header-menu.row.text-center
+                .col-xs-12
+                    p Random Matchups
             #loading-div.row.text-center.shadow-top.soft-bg
                 p Getting next match
 
@@ -51,6 +56,7 @@ html
                                 #vs-opponent-img.char-img
                             .row
                                 #vs-opponent-name.col-xs-12
+
                     #slider-div.row.soft-bg
                         .col-xs-1.col-md-4
                         #vs-slide-div.col-xs-7.col-md-4
@@ -120,12 +126,11 @@ html
                         .col-xs-1.col-md-4
                         #solo-slide-div.col-xs-7.col-md-4
                             input(id="solo-slider" type="range" min="0" max="10" step="1")
-                        .col-xs-3.next-btn-wrapper
+                        .col-xs-3.col-md-4next-btn-wrapper
                             #solo-next.next-btn-div.text-center
                                 button(class="btn" id="solo-next") Submit Vote
                     
-            
-            #last-match.row.soft-bg.last-match-row
+            #last-match.row.soft-bg.last-match-row.text-center
                 .col-xs-0.col-md-2
                 #last-match-table.col-xs-12.col-md-8
                     #last-match-results.col-xs-3

@@ -5,6 +5,15 @@
 	text-shadow: 1px 1px 1px rgba(0,0,0,.5);
 }
 
+p {
+	margin:0;
+}
+
+#summary p {
+	color: rgba(252, 248, 227, 0.82);
+    text-shadow: none;
+}
+
 #solo-game-div, #team-game-div, #vs-game-div {
 	display: none;
 	padding: 0;
@@ -15,7 +24,7 @@
 }
 
 #beta {
-	padding-top: 16px;
+	padding: 10px 30px;
 	color: black;
 	font-size: 14px;
 	background-color: rgb(255, 229, 99);
@@ -30,9 +39,15 @@
 
 #menu {
 	font-family: OverMatch;
-	font-size: 25px;
-	padding: 25px 0;
-	padding-bottom: 15px;
+    font-size: 25px;
+    /* padding: 25px 0; */
+    /* padding-bottom: 15px; */
+    line-height: 35px;
+}
+
+#header-menu {
+	font-family: OverMatch;
+	font-size: 30px;
 	line-height: 30px;
 }
 
@@ -502,11 +517,12 @@
 
 #last-match-table img {
 	width: 45px;
+	height: 40px;
 	margin: 0 5px;
 }
 
 #last-match-table div {
-	top: 5px;
+	line-height: 55px;
 }
 
 #slider-div {
@@ -530,5 +546,5 @@
 
 #summary {
 	font-size: 14px;
-	padding: 20px 50px;
+	padding: 0px 15px;
 }
