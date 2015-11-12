@@ -11,6 +11,13 @@ mongoose.connect(process.env.MONGO_KEY);
 
 //-- Schemas --//
 
+var Comment = new Schema({
+    date: { type: Date, default: Date.now },
+    text: String,
+    rating: Number,
+    vote: Number,
+    user: {type: String, default: 'Anonymous'}
+});
 
 var Dates = new Schema({
     date: Number,
@@ -20,7 +27,8 @@ var Dates = new Schema({
 
 var Opponent = new Schema({
     id: Number,
-    days: [Dates]
+    days: [Dates],
+    comments: [Comment]
 }, { _id: false});
 
 

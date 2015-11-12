@@ -1,116 +1,112 @@
-function setBackground () {
-	var bg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+var main = (function () {
 
-	$('body').css('background', 'url(/images/backgrounds/'+bg+'.jpg) no-repeat center center fixed');
-	$('body').css('-webkit-background-size', 'cover');
-	$('body').css('-moz-background-size', 'cover');
-	$('body').css('-o-background-size', 'cover');
-	$('body').css('background-size', 'cover');
-}
+	me = {};
 
-function loadHeroes () {
-	heroes.forEach(function (hero) {
-		
-		var heroHtml = '<div class="hero-div"></div>'
-		$('#hero-pick').append();
+	me.game = '';
 
-	});
-}
+	function setBackground () {
+		var bg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
 
-function pickGame () {
-	return Math.floor(Math.random() * 3.5);
-}
+		$('body').css('background', 'url(/images/backgrounds/'+bg+'.jpg) no-repeat center center fixed');
+		$('body').css('-webkit-background-size', 'cover');
+		$('body').css('-moz-background-size', 'cover');
+		$('body').css('-o-background-size', 'cover');
+		$('body').css('background-size', 'cover');
+	}
 
-function loadGame (num) {
-	if (num === 0) {
-		socketHelper.emit('get-vs-data', client);
-	} else if (num === 1) {
-		socketHelper.emit('get-team-data', client);
-	} if (num >= 2) {
-		socketHelper.emit('get-solo-data', client);
-	} 
+	function loadHeroes () {
+		heroes.forEach(function (hero) {
+			
+			var heroHtml = '<div class="hero-div"></div>'
+			$('#hero-pick').append();
 
-}
+		});
+	}
 
-// Attaches a game to the front page div
-function attachGame (num) {
-	$('#loading-div').hide();
-	$('#loading-div-bottom').hide();
-	if (num === 0) {
-		$("#vs-game-div").show();
-	} else if (num === 1) {
-		$("#team-game-div").show();
-	} if (num >= 2) {
-		$("#solo-game-div").show();
-	} 
+	me.pickGame = function () {
+		return Math.floor(Math.random() * 3.5);
+	}
 
-}
+	function loadGame (num) {
+		if (num === 0) {
+			socketHelper.emit('get-vs-data', client);
+		} else if (num === 1) {
+			socketHelper.emit('get-team-data', client);
+		} if (num >= 2) {
+			socketHelper.emit('get-solo-data', client);
+		} 
 
-function nextGame () {
-	$("#vs-game-div").hide();
-	$("#team-game-div").hide();
-	$("#solo-game-div").hide();
-	$('#loading-div p').html('Getting next match');
-	$('#loading-div').show();
-	$('#loading-div-bottom').show();
+	}
 
-	socketHelper.emit('status-request', client);
+	// Attaches a game to the front page div
+	me.attachGame = function (num) {
+		$('#loading-div').hide();
+		$('#loading-div-bottom').hide();
+		if (num === 0) {
+			$("#vs-game-div").show();
+		} else if (num === 1) {
+			$("#team-game-div").show();
+		} if (num >= 2) {
+			$("#solo-game-div").show();
+		} 
 
-	var game = pickGame();
-	loadGame(game);
+	}
 
-	setTimeout(function() {
-	    $('#loading-div p').append('.');
-		    setTimeout(function() {
-		    $('#loading-div p').append('.');
-		    	setTimeout(function() {
-		    	    $('#loading-div p').append('.');
-			    	    setTimeout(function() {
-			    	        attachGame(game);
-			    	        
-		        }, 300);
-		    }, 300);
-		}, 300);
-	}, 300);
-}
+	me.nextGame = function () {
+		$("#vs-game-div").hide();
+		$("#team-game-div").hide();
+		$("#solo-game-div").hide();
+		$('#loading-div p').html('Getting next match');
+		$('#loading-div').show();
+		$('#loading-div-bottom').show();
+
+		socketHelper.emit('status-request', client);
+
+		me.game = me.pickGame();
+		loadGame(me.game);
+	}
 
 
-function populateDropdowns() {
+	function populateDropdowns() {
 
-	// Sort heroes array
-	heroesSorted = heroes.slice();
-	heroesSorted.sort(function(a, b) {
-	    var textA = a.tag.toUpperCase();
-	    var textB = b.tag.toUpperCase();
-	    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-	});
+		// Sort heroes array
+		heroesSorted = heroes.slice();
+		heroesSorted.sort(function(a, b) {
+		    var textA = a.tag.toUpperCase();
+		    var textB = b.tag.toUpperCase();
+		    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+		});
 
-	heroesSorted.forEach(function(hero) {
-		$(".hero-dropdown").append('<option value="'+hero.id+'">'+hero.name+'</option>');
-	});
+		heroesSorted.forEach(function(hero) {
+			$(".hero-dropdown").append('<option value="'+hero.id+'">'+hero.name+'</option>');
+		});
 
 
-	// Sort maps array
-	mapsSorted = maps.slice();
-	mapsSorted.sort(function(a, b) {
-	    var textA = a.tag.toUpperCase();
-	    var textB = b.tag.toUpperCase();
-	    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-	});
+		// Sort maps array
+		mapsSorted = maps.slice();
+		mapsSorted.sort(function(a, b) {
+		    var textA = a.tag.toUpperCase();
+		    var textB = b.tag.toUpperCase();
+		    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+		});
 
-	mapsSorted.forEach(function(map) {
-		$(".map-dropdown").append('<option value="'+map.id+'">'+map.name+ ' (' + map.strat + ')</option>');
+		mapsSorted.forEach(function(map) {
+			$(".map-dropdown").append('<option value="'+map.id+'">'+map.name+ ' (' + map.strat + ')</option>');
+		});
+
+	}
+
+	$("#title").click(function() {
+		window.location = '/';
 	});
 
-}
+	$(document).ready(function () {
+		setBackground();
+		me.nextGame();
+		populateDropdowns();
 
-$("#title").click(function() {
-	window.location = '/';
-});
+	});
 
-$(document).ready(function () {
-	setBackground();
-	nextGame();
-	populateDropdowns();
+	return me;
 
-});
+}());

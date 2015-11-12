@@ -527,3 +527,8 @@
 	text-shadow: none;
 	font-size:12px;
 }
+
+#summary {
+	font-size: 14px;
+	padding: 20px 50px;
+}

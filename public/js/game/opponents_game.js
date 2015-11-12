@@ -67,7 +67,7 @@ var vsGame = (function () {
         $("#vs-slider").val(5).change();
 
         socketHelper.emit('vote', data);
-        nextGame();
+        main.nextGame();
     });
 
     return me;

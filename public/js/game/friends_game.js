@@ -70,7 +70,7 @@ var teamGame = (function () {
         $("#team-slider").val(5).change();
 
         socketHelper.emit('vote', data);
-        nextGame();
+        main.nextGame();
     });
 
     return me;
