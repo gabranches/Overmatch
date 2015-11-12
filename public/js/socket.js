@@ -25,19 +25,16 @@ var socketHelper = (function () {
     //-- Connection Event --//
 
     // Send client info to server
-    socket.on('connect', function () { 
+    socket.on('connect', function (err) { 
         me.getSocketID()
+        $('#disconnect-alert').hide();
         socket.emit('user-connect', client);
         socket.emit('status-request', client);
-
-        // Check connection
-        setInterval(function () {
-            if (!(socket.connected)) {
-                $('#disconnect-alert').show();
-            }
-        }, 5000);
     });
 
+    socket.on('connect_error', function (err) { 
+        $('#disconnect-alert').show();
+    });
 
     //-- Incoming Events --//
 
