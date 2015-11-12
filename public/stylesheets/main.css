@@ -12,6 +12,7 @@ p {
 #summary p {
 	color: rgba(252, 248, 227, 0.82);
     text-shadow: none;
+    font-size: 12px;
 }
 
 #solo-game-div, #team-game-div, #vs-game-div {
@@ -381,7 +382,7 @@ p {
 
 .menu-btn:hover {
 	background-color: rgba(95, 218, 255, 0.44);
-	color: white;
+	color: #FCF8E3;
 }
 
 
@@ -412,7 +413,7 @@ p {
 
 .menu-selected {
     background-color: rgba(130, 226, 255, 0.75);
-    color: white;
+    color: #FCF8E3;
 }
 
 
@@ -477,7 +478,7 @@ p {
 .hero-dropdown, .map-dropdown, .days-dropdown {
 	background: transparent;
     border-radius: 0px;
-    color: white;
+    color: #FCF8E3;
     width: 75%;
     margin: 0 auto;
     border: 1px solid #777777;
@@ -489,7 +490,7 @@ p {
 
 .hero-dropdown > option, .map-dropdown > option, .days-dropdown > option {
 	color:black;
-	background-color: white;
+	background-color: #FCF8E3;
 }
 
 #team-days-header {
