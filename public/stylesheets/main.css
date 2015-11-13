@@ -1,3 +1,7 @@
+ html {
+ 	height: 100%;
+ }
+
  body {
 	height: 100%;
 	color: #FCF8E3;
@@ -91,7 +95,6 @@ p {
 	background-image: url(/images/backgrounds/dark_geometric.png);
 	background-repeat: repeat;
 	/*width: 1000px;*/	
-
    -moz-box-shadow:    0 0 10px #000000;
    -webkit-box-shadow: 0 0 10px #000000;
    box-shadow:         0 0 10px #000000;
@@ -262,6 +265,10 @@ p {
 
 #pick-team {
 	display: none;
+}
+
+#pick-map {
+	padding-bottom: 10px;
 }
 
 
@@ -494,6 +501,12 @@ p {
 
 .pic-selected {
 	background-color: black;
+}
+
+.map-selected img {
+	-moz-box-shadow:  0 1px 5px rgba(113, 113, 113, 0.64);
+ 	-webkit-box-shadow: 0 1px 5px rgba(113, 113, 113, 0.64);
+	box-shadow: 0 1px 5px rgba(113, 113, 113, 0.64);
 }
 
 .hero-dropdown-div, .map-dropdown-div {

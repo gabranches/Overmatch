@@ -71,8 +71,7 @@ var socketHelper = (function () {
 
     socket.on('map-stats', function (data){
         mapStats = data;
-        stats.populateMapStats('offense', data);
-        console.log(data);
+        stats.populateMapStats(data);
     });
 
     socket.on('team-picks-data', function (data){

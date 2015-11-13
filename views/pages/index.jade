@@ -171,7 +171,7 @@ html
                 .col-xs-12
                     .row
                     each map in maps
-                        .pick-map-div(data-id="#{map.id}")
+                        .pick-map-div(data-id="#{map.id}" data-tag="#{map.tag}")
                             .pick-map-thumb(title="#{map.name}")
                                 img(src="/images/maps/#{map.tag}.jpg")
                             .pick-map-name
@@ -226,7 +226,6 @@ html
             #hero-stats.row.text-center.soft-bg.shadow-top
             
                 #hero-stats-menu.row
-
                     .col-xs-12.text-center
                         #matchups-btn.menu-btn
                             p Matchups
@@ -236,6 +235,13 @@ html
                             p Teammates
                         #maps-btn.menu-btn
                             p Maps
+
+                #map-stats-menu.row
+                    .col-xs-12.text-center
+                        #offense-btn.menu-btn
+                            p Offense
+                        #defense-btn.menu-btn
+                            p Defense
   
                 #beta.row.text-center
                     .col-xs-12
@@ -243,31 +249,6 @@ html
                 .row
                     .col-xs-0.col-md-2
                     #hero-stats-table.col-xs-12.col-md-8
-                
-                 #map-stats-title.row
-                                .col-xs-3
-                                #map-stats-name.col-xs-6.text-center
-
-                            #map-stats.row.text-center.soft-bg.shadow-top
-                            
-                                #map-stats-menu.row
-
-                                    .col-xs-12.text-center
-                                        #matchups-btn.menu-btn
-                                            p Matchups
-                                        #counters-btn.menu-btn
-                                            p Counters
-                                        #teammates-btn.menu-btn
-                                            p Teammates
-                                        #maps-btn.menu-btn
-                                            p Maps
-                  
-                                #beta.row.text-center
-                                    .col-xs-12
-                                        p Overmatch currently in Beta. <strong> Results may be inaccurate</strong> until the site collects enough votes. Thank you for helping! 
-                                .row
-                                    .col-xs-0.col-md-2
-                                    #map-stats-table.col-xs-12.col-md-8
 
             #copyright.row.text-center
                 .col-xs-12

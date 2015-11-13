@@ -5,10 +5,18 @@ var stats = (function () {
     var me = {};
     var hero_id = '';
     var map_id = '';
+    var map_tag = '';
     var stat_type = 'matchups';
+    var map_strat = 'offense';
 
     me.appendToTable = function (data, counter) {
-        var rating = data.avg.toFixed(2);
+        if (data.avg) {
+            var rating = data.avg.toFixed(2);
+        } else {
+            var rating = 0;
+            rating = rating.toFixed(2);;
+        }
+
         var table = $("#hero-stats-table");
         var count = '<div class="row-count col-xs-1">' + counter + '</div>';
 
@@ -57,7 +65,7 @@ var stats = (function () {
             $("#row-map-type").html($('#team-map option:selected').text());
         } else if (stat_type === 'mapList') {
             table.append('<div class="table-row header-row row"><div class="col-xs-1 row-name">Rank</div>' + 
-                         '<div id="row-map-type" class="col-xs-6 row-name text-center"></div>' +
+                         '<div id="row-map-type" class="col-xs-6 row-name text-center">'+mapStats.map.name + ': ' + mapStats.map.strat +'</div>' +
                          '<div class="col-xs-2 row-name text-center">Score</div>' +
                          '<div class="col-xs-3 row-name">Votes</div></div>');
         } else {
@@ -75,6 +83,8 @@ var stats = (function () {
             var picsHtml = picsHtml + '<img style="border: 1px solid rgba(255, 165, 0, 0.55)" src="/images/maps/'+maps[data.opponent].tag+'.jpg" />';
         } else if (data.type === 'matchups') {
             var picsHtml = picsHtml + '<img style="border: 1px solid rgba(255, 0, 0, 0.44);" src="/images/thumbnails/'+heroes[data.opponent].tag+'.png" />';
+        } else if (data.type === 'mapList') {
+            var picsHtml = picsHtml + '<img style="border: 1px solid rgba(255, 0, 0, 0.44);" src="/images/maps/'+maps[data.opponent].tag+'.jpg" />';
         } else {
             var picsHtml = picsHtml + '<img style="border: 1px solid rgba(108, 220, 255, 0.36);" src="/images/thumbnails/'+heroes[data.opponent].tag+'.png" />';
         }
@@ -96,11 +106,23 @@ var stats = (function () {
 
     }
 
+    me.populateMapMatchups = function (type) {
+        $("#hero-stats-table").empty();
+        me.writeHeader('mapList');
+        $('#' + type + '-btn').addClass('menu-selected');
+       
+         for (var i=0; i < mapStats['mapList'].length; i++) {
+            me.appendToTable(mapStats['mapList'][i], i+1);
+        }
+
+    }
+
     // Populate results for the hero stats section
     me.populateHeroStats = function (data) {
         stat_type = 'matchups';
         $('#hero-stats').show();
         $("#hero-stats-menu").show();
+        $("#map-stats-menu").hide();
         $('#hero-stats-name').append('<img src="/images/thumbnails/'+data.hero.tag+'.png" />');
         $('#hero-stats-name').html(heroStats.hero.name);
         me.populateMatchups(stat_type);
@@ -108,15 +130,16 @@ var stats = (function () {
     }
 
     // Populate results for the map stats section
-    me.populateMapStats = function (strat, data) {
+    me.populateMapStats = function (data) {
         stat_type = 'mapList';
-        $('#map-stats').show();
+        $('#hero-stats').show();
         $("#map-stats-menu").show();
-        $('#map-stats-name').append('<img src="/images/maps/'+data.map.tag+'.png" />');
-        $('#map-stats-name').html(mapStats.map.name);
-        $("#map-stats-table").empty();
+        $("#hero-stats-menu").hide();
+        $('#hero-stats-name').append('<img src="/images/maps/'+data.map.tag+'.jpg" />');
+        $('#hero-stats-name').html(mapStats.map.name);
+        $("#hero-stats-table").empty();
         me.writeHeader(stat_type);
-        $('#' + strat + '-btn').addClass('menu-selected');
+        me.populateMapMatchups(map_strat);
         
     }
 
@@ -143,10 +166,13 @@ var stats = (function () {
         $('#counters-btn').removeClass('menu-selected');
         $('#teammates-btn').removeClass('menu-selected');
         $('#maps-btn').removeClass('menu-selected');
+        $('#offense-btn').removeClass('menu-selected');
+        $('#defense-btn').removeClass('menu-selected');
     }
 
     function clearPicSelection() {
         $('.pick-hero-thumb').removeClass('pic-selected');
+        $('.pick-map-div').removeClass('map-selected');
     }
 
     //-- Event Handlers --//
@@ -164,12 +190,12 @@ var stats = (function () {
 
     $(".pick-map-div").click(function () {
         clearMenuButtons();
-        // clearPicSelection();
-        // $(this).addClass('pic-selected');
-        map_id = $(this).attr("data-id");
+        clearPicSelection();
+        $(this).addClass('map-selected');
+        map_tag = $(this).attr("data-tag");
         $("#hero-stats-title").show();
         $("#beta").show();
-        map_id = maps[map_id].id;
+        map_id = mapTagToId.indexOf(map_tag + '-' + map_strat);
         socketHelper.emit('get-map-stats', {map: map_id, client: client, days: settings.days});
     });
 
@@ -180,6 +206,8 @@ var stats = (function () {
         $("#pick-hero").show();
         $("#pick-team").hide();
         $("#pick-map").hide();
+        $('#hero-stats-title').hide();
+        $('#hero-stats').hide();
         clearBigMenuButtons();
         $(this).addClass('bigmenu-selected');
     });
@@ -188,6 +216,8 @@ var stats = (function () {
         $("#pick-map").show();
         $("#pick-team").hide();
         $("#pick-hero").hide();
+        $('#hero-stats-title').hide();
+        $('#hero-stats').hide();
         clearBigMenuButtons();
         $(this).addClass('bigmenu-selected');
     });
@@ -195,6 +225,8 @@ var stats = (function () {
     $('#team-counter-btn').click(function () {
         $("#pick-map").hide();
         $("#pick-team").hide();
+        $('#hero-stats-title').hide();
+        $('#hero-stats').hide();
         clearBigMenuButtons();
         $(this).addClass('bigmenu-selected');
     });
@@ -202,6 +234,8 @@ var stats = (function () {
     $('#friendly-team-btn').click(function () {
         $("#pick-map").hide();
         $("#pick-team").hide();
+        $('#hero-stats-title').hide();
+        $('#hero-stats').hide();
         clearBigMenuButtons();
         $(this).addClass('bigmenu-selected');
     });
@@ -239,6 +273,22 @@ var stats = (function () {
         hero = heroes[hero_id].name;
         stat_type = 'maps';
         me.populateMatchups(stat_type);
+    });
+
+    $("#defense-btn").click(function () {
+        clearMenuButtons();
+        stat_type = 'mapList';
+        map_strat = 'defense';
+        map_id = mapTagToId.indexOf(map_tag + '-' + 'defense');
+        socketHelper.emit('get-map-stats', {map: map_id, client: client, days: settings.days});
+    });
+
+    $("#offense-btn").click(function () {
+        clearMenuButtons();
+        stat_type = 'mapList';
+        map_strat = 'offense';
+        map_id = mapTagToId.indexOf(map_tag + '-' + 'offense');
+        socketHelper.emit('get-map-stats', {map: map_id, client: client, days: settings.days});
     });
 
 
