@@ -20,9 +20,6 @@ p {
 	padding: 0;
 }
 
-#header {
-
-}
 
 #beta {
 	padding: 10px 30px;
@@ -41,15 +38,13 @@ p {
 #menu {
 	font-family: OverMatch;
     font-size: 25px;
-    /* padding: 25px 0; */
-    /* padding-bottom: 15px; */
     line-height: 35px;
 }
 
 #header-menu {
 	font-family: OverMatch;
 	font-size: 30px;
-	line-height: 30px;
+	line-height: 40px;
 }
 
 
@@ -366,7 +361,7 @@ p {
 }
 
 .menu-btn {
-    background-color: rgba(0, 196, 255, 0.32);
+    background-color: rgba(108, 220, 255, 0.16);
     width: 150px; 
     height: 35px;
     border-radius: 4px;
@@ -374,7 +369,7 @@ p {
     font-size: 14px;
     margin: 15px 25px;
     cursor: pointer;
-    border: 1px solid #D4F5FF;;
+    border: 1px solid rgba(108, 220, 255, 0.32);
     display: inline-block;
     color: #D4F5FF;
     font-weight: bold;
@@ -412,7 +407,7 @@ p {
 }
 
 .menu-selected {
-    background-color: rgba(130, 226, 255, 0.75);
+    background-color: rgba(182, 239, 255, 0.45);
     color: #FCF8E3;
 }
 
@@ -547,5 +542,12 @@ p {
 
 #summary {
 	font-size: 14px;
-	padding: 0px 15px;
+	padding: 15px 15px;
+	background-color: rgba(108, 220, 255, 0.16);
+	border-top: 1px solid rgba(108, 220, 255, 0.32);
+	border-bottom: 1px solid rgba(108, 220, 255, 0.32);
+}
+
+#summary a {
+	color: white;
 }
