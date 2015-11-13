@@ -43,21 +43,21 @@ var socketHelper = (function () {
         vsGame.setupInterface(data);
         setInterval(function () {
             main.attachGame(main.game);
-        }, 2000)
+        }, 1000)
     });
     
     socket.on('solo-data', function (data){
         soloGame.setupInterface(data);
         setInterval(function () {
             main.attachGame(main.game);
-        }, 2000)    
+        }, 1000)    
     });
 
     socket.on('team-data', function (data){
         teamGame.setupInterface(data);
         setInterval(function () {
             main.attachGame(main.game);
-        }, 2000)
+        }, 1000)
     });
 
     socket.on('status', function (data){
@@ -67,6 +67,12 @@ var socketHelper = (function () {
     socket.on('all-stats', function (data){
         heroStats = data;
         stats.populateHeroStats(data);
+    });
+
+    socket.on('map-stats', function (data){
+        mapStats = data;
+        stats.populateMapStats('offense', data);
+        console.log(data);
     });
 
     socket.on('team-picks-data', function (data){

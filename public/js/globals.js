@@ -7,6 +7,7 @@ var settings = {
 };
 
 var heroStats = {};
+var mapStats = {};
 var heroesSorted = {};
 
 var mapsSorted = {};

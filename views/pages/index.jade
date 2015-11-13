@@ -24,7 +24,7 @@ html
                         p Community-Driven Overwatch Stats
             #summary.row.soft-bg
                 .col-xs-12
-                    p OverMatch allows players to vote for what they consider good and bad matchups in Overwatch. This data is used to provide rankings for individual matchups, including enemies, teammates, and map strategies. Players can also use the Team Builder to get suggetions on what heroes to pick based on the enemy or friendly team composition. This site was built by a community member, for the community - I am always interested in <a target="_blank" href="https://docs.google.com/forms/d/1Ux5oRuSmXepCxEovF0-MfycIDpkA8iUzFAMEzGXXR2Y/viewform?usp=send_form">feedback</a>!
+                    p OverMatch allows players to vote for what they consider good and bad matchups in Overwatch. This data is used to provide rankings for individual matchups, including enemies, teammates, and map strategies. Players can also use the Team Builder to get suggetions on what heroes to pick based on the enemy or friendly team composition. If you have any suggestions, please feel free to <a target="_blank" href="https://docs.google.com/forms/d/1Ux5oRuSmXepCxEovF0-MfycIDpkA8iUzFAMEzGXXR2Y/viewform?usp=send_form">submit feedback</a>!
             #header-menu.row.text-center
                 .col-xs-12
                     p Random Matchups
@@ -148,9 +148,9 @@ html
                 #friendly-team-btn.col-xs-3.menu-option
                     p Friendly Team Builder
 
-            #pick-hero-before.row.shadow-top
+            #pick-hero-before.row.shadow-top.soft-bg
 
-            #pick-hero.row.text-center
+            #pick-hero.row.text-center.shadow-bottom
                 .col-xs-12
                     .row
                         #instructions.col-xs-12.text-left.pick-instructions
@@ -162,6 +162,20 @@ html
                             .pick-hero-thumb(title="#{hero.name}" data-id="#{hero.id}")
                                 img(src="/images/thumbnails/#{hero.tag}.png")
                             .pick-hero-name
+
+            #pick-map.row.text-center.soft-bg.shadow-bottom
+                .col-xs-12
+                    .row
+                        #instructions.col-xs-12.text-left.pick-instructions
+                            p <span class="map">Pick a map</span> to see the most picked heroes for both offense and defense:
+                .col-xs-12
+                    .row
+                    each map in maps
+                        .pick-map-div(data-id="#{map.id}")
+                            .pick-map-thumb(title="#{map.name}")
+                                img(src="/images/maps/#{map.tag}.jpg")
+                            .pick-map-name
+                                p <span class="map-name">#{map.name}</span>
 
             #pick-team.row.text-center
                 .col-xs-12
@@ -229,9 +243,32 @@ html
                 .row
                     .col-xs-0.col-md-2
                     #hero-stats-table.col-xs-12.col-md-8
+                
+                 #map-stats-title.row
+                                .col-xs-3
+                                #map-stats-name.col-xs-6.text-center
 
-            #pick-hero-after.row.shadow-bottom
-            
+                            #map-stats.row.text-center.soft-bg.shadow-top
+                            
+                                #map-stats-menu.row
+
+                                    .col-xs-12.text-center
+                                        #matchups-btn.menu-btn
+                                            p Matchups
+                                        #counters-btn.menu-btn
+                                            p Counters
+                                        #teammates-btn.menu-btn
+                                            p Teammates
+                                        #maps-btn.menu-btn
+                                            p Maps
+                  
+                                #beta.row.text-center
+                                    .col-xs-12
+                                        p Overmatch currently in Beta. <strong> Results may be inaccurate</strong> until the site collects enough votes. Thank you for helping! 
+                                .row
+                                    .col-xs-0.col-md-2
+                                    #map-stats-table.col-xs-12.col-md-8
+
             #copyright.row.text-center
                 .col-xs-12
                     p ©2015 Blizzard Entertainment, Inc. All rights reserved. Overwatch is a trademark of Blizzard Entertainment, Inc.

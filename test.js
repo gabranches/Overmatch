@@ -15,5 +15,7 @@ var comment = {
 
 // var results = dbTransactions.writeComment(7, 0, 'friends', comment);
 
-dbTransactions.removeComment(7, 0, 'friends', '56450c926c23881323703a2c');
+// dbTransactions.removeComment(7, 0, 'friends', '56450c926c23881323703a2c');
+
+console.log(stats.getMapStats(15,7));
 

@@ -40,16 +40,17 @@ var main = (function () {
 
 	// Attaches a game to the front page div
 	me.attachGame = function (num) {
-		$('#loading-div').hide();
-		$('#loading-div-bottom').hide();
-		if (num === 0) {
-			$("#vs-game-div").show();
-		} else if (num === 1) {
-			$("#team-game-div").show();
-		} if (num >= 2) {
-			$("#solo-game-div").show();
-		} 
+		var num = num;
 
+			$('#loading-div').hide();
+			$('#loading-div-bottom').hide();
+			if (num === 0) {
+				$("#vs-game-div").show();
+			} else if (num === 1) {
+				$("#team-game-div").show();
+			} if (num >= 2) {
+				$("#solo-game-div").show();
+			} 
 	}
 
 	me.nextGame = function () {

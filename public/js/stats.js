@@ -4,6 +4,7 @@ var stats = (function () {
     
     var me = {};
     var hero_id = '';
+    var map_id = '';
     var stat_type = 'matchups';
 
     me.appendToTable = function (data, counter) {
@@ -54,6 +55,11 @@ var stats = (function () {
                          '<div class="col-xs-2 row-name text-center">Score <span title="Scores are calculated by taking a weighted average of hero scores with map scores. Map scores have double the weight of one hero score." class="glyphicon glyphicon-info-sign"></span></div>' +
                          '<div class="col-xs-3 row-name">Votes</div></div>');
             $("#row-map-type").html($('#team-map option:selected').text());
+        } else if (stat_type === 'mapList') {
+            table.append('<div class="table-row header-row row"><div class="col-xs-1 row-name">Rank</div>' + 
+                         '<div id="row-map-type" class="col-xs-6 row-name text-center"></div>' +
+                         '<div class="col-xs-2 row-name text-center">Score</div>' +
+                         '<div class="col-xs-3 row-name">Votes</div></div>');
         } else {
             table.append('<div class="table-row header-row row"><div class="col-xs-1 row-name">Rank</div>' + 
                          '<div class="col-xs-2 row-name"></div>' +
@@ -83,8 +89,8 @@ var stats = (function () {
         $("#hero-stats-table").empty();
         me.writeHeader(type);
         $('#' + type + '-btn').addClass('menu-selected');
-        
-        for (var i=0; i < heroStats[type].length; i++) {
+       
+         for (var i=0; i < heroStats[type].length; i++) {
             me.appendToTable(heroStats[type][i], i+1);
         }
 
@@ -98,6 +104,19 @@ var stats = (function () {
         $('#hero-stats-name').append('<img src="/images/thumbnails/'+data.hero.tag+'.png" />');
         $('#hero-stats-name').html(heroStats.hero.name);
         me.populateMatchups(stat_type);
+        
+    }
+
+    // Populate results for the map stats section
+    me.populateMapStats = function (strat, data) {
+        stat_type = 'mapList';
+        $('#map-stats').show();
+        $("#map-stats-menu").show();
+        $('#map-stats-name').append('<img src="/images/maps/'+data.map.tag+'.png" />');
+        $('#map-stats-name').html(mapStats.map.name);
+        $("#map-stats-table").empty();
+        me.writeHeader(stat_type);
+        $('#' + strat + '-btn').addClass('menu-selected');
         
     }
 
@@ -116,6 +135,7 @@ var stats = (function () {
         $('#hero-stats-btn').removeClass('bigmenu-selected');
         $('#team-counter-btn').removeClass('bigmenu-selected');
         $('#friendly-team-btn').removeClass('bigmenu-selected');
+        $('#map-stats-btn').removeClass('bigmenu-selected');
     }
 
     function clearMenuButtons() {
@@ -142,21 +162,46 @@ var stats = (function () {
         socketHelper.emit('get-all-stats', {hero: hero_id, client: client, days: settings.days});
     });
 
+    $(".pick-map-div").click(function () {
+        clearMenuButtons();
+        // clearPicSelection();
+        // $(this).addClass('pic-selected');
+        map_id = $(this).attr("data-id");
+        $("#hero-stats-title").show();
+        $("#beta").show();
+        map_id = maps[map_id].id;
+        socketHelper.emit('get-map-stats', {map: map_id, client: client, days: settings.days});
+    });
+
+
     // Big menu buttons
 
     $('#hero-stats-btn').click(function () {
         $("#pick-hero").show();
         $("#pick-team").hide();
+        $("#pick-map").hide();
+        clearBigMenuButtons();
+        $(this).addClass('bigmenu-selected');
+    });
+
+    $('#map-stats-btn').click(function () {
+        $("#pick-map").show();
+        $("#pick-team").hide();
+        $("#pick-hero").hide();
         clearBigMenuButtons();
         $(this).addClass('bigmenu-selected');
     });
 
     $('#team-counter-btn').click(function () {
+        $("#pick-map").hide();
+        $("#pick-team").hide();
         clearBigMenuButtons();
         $(this).addClass('bigmenu-selected');
     });
 
     $('#friendly-team-btn').click(function () {
+        $("#pick-map").hide();
+        $("#pick-team").hide();
         clearBigMenuButtons();
         $(this).addClass('bigmenu-selected');
     });

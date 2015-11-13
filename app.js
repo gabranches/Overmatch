@@ -6,6 +6,8 @@ var server = app.listen(process.env.PORT || 5000);
 var io = require('socket.io').listen(server);
 var ioConn = require('./lib/io.js')(io);
 var heroes = require('./setup/heroes.js');
+var maps = require('./setup/maps.js');
+var halfMaps =  maps.slice(0, Math.ceil(maps.length / 2));
 var runAll = require('./lib/generateStats.js');
 var path = require('path');
 global.appRoot = path.resolve(__dirname);
@@ -20,7 +22,10 @@ app.set('view engine', 'jade');
 
 // Front page
 app.get('/', function (request, response) {
-    response.render('pages/index', {heroes: heroes});
+    response.render('pages/index', {
+    	heroes: heroes,
+     	maps: halfMaps
+     });
 });
 
 runAll();

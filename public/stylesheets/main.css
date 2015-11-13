@@ -175,6 +175,10 @@ p {
 	font-weight: bold;
 }
 
+.map-name {
+	color: orange;
+}
+
 .map-img img {
 	width: 64%;
 	max-width: 150px;
@@ -251,7 +255,7 @@ p {
     background-color: rgb(204, 203, 203)
 }
 
-#pick-hero, #pick-team {
+#pick-hero, #pick-team, #pick-map{
 	background-color: rgba(80, 80, 80, 0.28);
 	padding: 0 50px;
 }
@@ -260,13 +264,6 @@ p {
 	display: none;
 }
 
-#pick-hero-before {
-	background-color: rgba(80, 80, 80, 0.28);
-}
-
-#pick-hero-after {
-	background-color: rgba(80, 80, 80, 0.28);
-}
 
 .pick-hero-div {
 	display: inline-block;
@@ -285,6 +282,31 @@ p {
 	margin-top: 10px;
 	font-family: OverMatch;
 	font-size: 20px;
+}
+
+#pick-map {
+	display: none;
+}
+
+.pick-map-div {
+	display: inline-block;
+	margin: 15px 25px;
+	/* padding: 0 30px; */
+	cursor: pointer;
+}
+
+.pick-map-thumb img{
+	width: 150px;
+	margin: 0 auto;
+	border-bottom: 0 none;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+}
+
+.pick-map-name {
+	margin-top: 10px;
+	font-family: OverMatch;
+	font-size: 24px;
+	font-weight: normal;
 }
 
 .next-btn-wrapper {
@@ -346,19 +368,50 @@ p {
     font-family: OverMatch;
 }
 
+#hero-stats-menu {
+	margin-top: 5px;
+}
+
+#map-stats {
+	display:none;
+}
+
+#map-stats-title {
+	display: none;
+}
+
+#map-stats-name {
+	font-family: OverMatch;
+	font-size: 50px;
+	line-height: 85px;
+}
+
+#map-stats-name img {
+	height: 85px;
+	margin-right: 20px;
+}
+
+#map-stats-back {
+	font-size: 30px;
+    padding-left: 30px;
+    font-family: OverMatch;
+}
+
+#map-stats-menu {
+	margin-top: 5px;
+}
+
 .table-row {
 	margin: 10px 0;
 	background-color: rgba(255, 255, 255, 0.06);
 	border-radius: 4px;
 }
 
+
 .table-row img {
 	width: 45px;
 }
 
-#hero-stats-menu {
-	margin-top: 5px;
-}
 
 .menu-btn {
     background-color: rgba(108, 220, 255, 0.16);
@@ -518,7 +571,7 @@ p {
 }
 
 #last-match-table div {
-	line-height: 55px;
+	line-height: 56px;
 }
 
 #slider-div {
@@ -546,8 +599,10 @@ p {
 	background-color: rgba(108, 220, 255, 0.16);
 	border-top: 1px solid rgba(108, 220, 255, 0.32);
 	border-bottom: 1px solid rgba(108, 220, 255, 0.32);
+	margin: 5px -15px;
 }
 
 #summary a {
 	color: white;
 }
+
