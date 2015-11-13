@@ -41,23 +41,17 @@ var socketHelper = (function () {
     // Receive message from server
     socket.on('vs-data', function (data){
         vsGame.setupInterface(data);
-        setInterval(function () {
-            main.attachGame(main.game);
-        }, 1000)
+        main.attachGame(main.game);
     });
     
     socket.on('solo-data', function (data){
         soloGame.setupInterface(data);
-        setInterval(function () {
-            main.attachGame(main.game);
-        }, 1000)    
+        main.attachGame(main.game);
     });
 
     socket.on('team-data', function (data){
         teamGame.setupInterface(data);
-        setInterval(function () {
-            main.attachGame(main.game);
-        }, 1000)
+        main.attachGame(main.game);
     });
 
     socket.on('status', function (data){
