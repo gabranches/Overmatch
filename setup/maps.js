@@ -1,4 +1,4 @@
-vgitar maps = [
+var maps = [
     {
         id: 0,
         tag: 'dorado',
