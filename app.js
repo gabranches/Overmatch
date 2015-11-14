@@ -11,7 +11,10 @@ var halfMaps =  maps.slice(0, Math.ceil(maps.length / 2));
 var runAll = require('./lib/generateStats.js');
 var path = require('path');
 global.appRoot = path.resolve(__dirname);
-
+var stats = require('./lib/stats.js')();
+var matchupsArr = stats.openStatsFile(30, 'matchups');
+var friendsArr = stats.openStatsFile(30, 'friends');
+var mapsArr = stats.openStatsFile(30, 'maps');
 
 //-- App Config --//
 
@@ -28,7 +31,28 @@ app.get('/', function (request, response) {
      });
 });
 
-runAll();
+
+app.get('/api/matchups', function (request, response) {
+    response.json(matchupsArr);
+});
+
+app.get('/api/teammates', function (request, response) {
+    response.json(friendsArr);
+});
+
+app.get('/api/maps', function (request, response) {
+    response.json(mapsArr);
+});
+
+app.get('/api/hero_ids', function (request, response) {
+    response.json(heroes);
+});
+
+app.get('/api/map_ids', function (request, response) {
+    response.json(maps);
+});
+
+
 // Update db every minute
 var minutes = 1, the_interval = minutes * 60 * 1000;
 setInterval(function() {

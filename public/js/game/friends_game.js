@@ -35,7 +35,7 @@ var teamGame = (function () {
         opponent = data.opponent;
         var questionText = 'Do you think <span class="hero">' +
                             hero.name+'</span> has good synergy with <span class="friend">'+
-                            opponent.name+'</span> on your team?';
+                            opponent.name+'</span>?';
 
         $("#team-title").html(questionText);
         $("#team-hero-name").html('<span class="hero-subtitle">' + hero.name + '</span>');

@@ -281,6 +281,7 @@ var stats = (function () {
     });
 
     $("#defense-btn").click(function () {
+        me.setLoading($('#hero-stats-name'));
         clearMenuButtons();
         stat_type = 'mapList';
         map_strat = 'defense';
@@ -289,6 +290,7 @@ var stats = (function () {
     });
 
     $("#offense-btn").click(function () {
+        me.setLoading($('#hero-stats-name'));
         clearMenuButtons();
         stat_type = 'mapList';
         map_strat = 'offense';

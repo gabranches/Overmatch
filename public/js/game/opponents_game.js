@@ -34,8 +34,8 @@ var vsGame = (function () {
         hero = data.hero;
         opponent = data.opponent;
         var questionText = 'How do you think <span class="hero">' +
-                            hero.name+'</span> does against <span class="opponent">'+
-                            opponent.name+'</span> on the other team?';
+                            hero.name+'</span> matches up against <span class="opponent">'+
+                            opponent.name+'</span>?';
         $("#vs-title").html(questionText);
         $("#vs-hero-name").html('<span class="hero-subtitle">' + hero.name + '</span>');
         $("#vs-opponent-name").html('<span class="opponent-subtitle">' + opponent.name + '</span>');
