@@ -104,8 +104,13 @@ var stats = (function () {
         me.writeHeader(type);
         $('#' + type + '-btn').addClass('menu-selected');
        
-         for (var i=0; i < heroStats[type].length; i++) {
-            me.appendToTable(heroStats[type][i], i+1);
+        var count = 1;
+
+        for (var i=0; i < heroStats[type].length; i++) {
+            if (heroStats[type][i].id != hero_id) {
+                me.appendToTable(heroStats[type][i], count);
+                count ++;
+            }
         }
 
     }
@@ -114,8 +119,7 @@ var stats = (function () {
         $("#hero-stats-table").empty();
         me.writeHeader('mapList');
         $('#' + type + '-btn').addClass('menu-selected');
-       
-         for (var i=0; i < mapStats['mapList'].length; i++) {
+        for (var i=0; i < mapStats['mapList'].length; i++) {
             me.appendToTable(mapStats['mapList'][i], i+1);
         }
 
