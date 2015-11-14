@@ -6,16 +6,16 @@ var teamGame = (function () {
     var opponent;
 
     var ratingQuotes = [
-        "They don't synergize at all and I would never pick [hero] with [opponent] on my team.", 
+        "They don't have any synergy and I would never pick [hero] with [opponent] on my team.", 
         "They have terrible synergy and I would only pick [hero] with [opponent] in rare situations.",
-        "They syngergize poorly and are actually a detriment to the team.",
-        "They synergize poorly, but may still be playable together ",
+        "They have poor synergy and are actually a detriment to the team.",
+        "They have poor synergy, but may still be playable together ",
         "They may have synergy, but only in specific situations.",
         "I don't know if they work well together.<br />I think are neutral.<br />No opinion.",
-        "They may have a bit of synergy in common situations.",
+        "They may have a bit of synergy.",
         "They have good synergy sometimes.",
-        "They have very good synergy.",
-        "They have excellent synergy.",
+        "They have very good synergy in most games.",
+        "They have excellent synergy in almost all games.",
         "They have perfect synergy and I would pick [hero] with [opponent] on my team every time."
     ];
 

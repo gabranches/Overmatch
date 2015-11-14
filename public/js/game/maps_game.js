@@ -9,13 +9,13 @@ var soloGame = (function () {
         "I would never pick [hero].", 
         "I would only pick [hero] as an absolute last resort.",
         "I think [hero] is weak in this situation.",
-        "I think [hero] has some flaws in this situation.",
+        "I would not pick [hero] too often in this situation.",
         "I think [hero] might not be good here, but I'll try to make it work.",
         "I don't know if [hero] is good or bad in this situation.<br />No opinion.",
         "I think [hero] might be good here.",
         "I would pick [hero] often.",
-        "I would pick [hero] most of the time",
-        "I would pick [hero] almost every time.",
+        "I would pick [hero] most of the time.",
+        "I think [hero] would be very strong in this situation.",
         "[hero] would be a guaranteed pick."
     ];
 
