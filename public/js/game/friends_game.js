@@ -52,7 +52,9 @@ var teamGame = (function () {
 
         onSlide: function(position, value) {
             $("#team-slide-val").html(value);
-            me.setQuote(value, hero.name);
+            if (hero) {
+                me.setQuote(value, hero.name);
+            }
         },
 
     });

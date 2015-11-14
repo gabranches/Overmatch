@@ -51,7 +51,9 @@ var vsGame = (function () {
 
         onSlide: function(position, value) {
             $("#vs-slide-val").html(value);
-            me.setQuote(value, hero.name);
+            if (hero) {
+                me.setQuote(value, hero.name);
+            }
         },
 
     });

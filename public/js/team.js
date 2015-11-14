@@ -57,6 +57,8 @@ var teamModule = (function () {
 
     $('#team-submit').click(function () {
 
+        setLoading($('#hero-stats-name'));
+
         $('.hero-dropdown').each(function () {
             if ($(this).val() != '') {
                 me.picks.team.push($(this).val());

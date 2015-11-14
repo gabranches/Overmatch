@@ -43,7 +43,7 @@ var stats = (function () {
         }
         
 
-        table.append('<div class="table-row row">' + count+ thumbnail + name + avg + votes + '</div>');
+        table.append('<div data-hero="'+hero_id+'" data-opponent="'+data.id+'" data-type="'+stat_type+'" class="table-row row data-row">' + count+ thumbnail + name + avg + votes + '</div>');
     }
 
     me.writeHeader = function (type) {
@@ -119,6 +119,7 @@ var stats = (function () {
 
     // Populate results for the hero stats section
     me.populateHeroStats = function (data) {
+
         stat_type = 'matchups';
         $('#hero-stats').show();
         $("#hero-stats-menu").show();
@@ -175,9 +176,15 @@ var stats = (function () {
         $('.pick-map-div').removeClass('map-selected');
     }
 
+    function setLoading(elem) {
+        elem.html('Getting stats...');
+
+    }
+
     //-- Event Handlers --//
 
     $(".pick-hero-thumb").click(function () {
+        setLoading($('#hero-stats-name'));
         clearMenuButtons();
         clearPicSelection();
         $(this).addClass('pic-selected');
@@ -189,6 +196,7 @@ var stats = (function () {
     });
 
     $(".pick-map-div").click(function () {
+        setLoading($('#hero-stats-name'));
         clearMenuButtons();
         clearPicSelection();
         $(this).addClass('map-selected');
@@ -291,6 +299,10 @@ var stats = (function () {
         socketHelper.emit('get-map-stats', {map: map_id, client: client, days: settings.days});
     });
 
+   $('#days-selection').change(function () {
+        var days = parseInt($(this).val());
+        settings.days = days;
+   });
 
     return me;
 

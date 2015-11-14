@@ -78,9 +78,9 @@ var socketHelper = (function () {
         stats.populateLastMatch(data);
     });
 
-
-
-
+    socket.on('graph-data', function (data){
+        stats.generateChart(data);
+    });
 
     return me;
 

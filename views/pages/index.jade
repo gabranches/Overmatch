@@ -22,7 +22,8 @@ html
                     #title.row 
                         p OverMatch
                     #subtitle.row
-                        p Community-Driven Overwatch Stats
+                        p A Community-Driven Overwatch Meta-Game
+
             #summary.row.soft-bg
                 .col-xs-12
                     p OverMatch allows players to vote for what they consider good and bad matchups in Overwatch. This data is used to provide rankings for individual matchups, including enemies, teammates, and map strategies. Players can also use the Team Builder to get suggetions on what heroes to pick based on the enemy or friendly team composition. If you have any suggestions, please feel free to <a target="_blank" href="https://docs.google.com/forms/d/1Ux5oRuSmXepCxEovF0-MfycIDpkA8iUzFAMEzGXXR2Y/viewform?usp=send_form">submit feedback</a>!
@@ -145,9 +146,9 @@ html
                 #map-stats-btn.col-xs-3.menu-option.menu-option
                     p Map Stats
                 #team-counter-btn.col-xs-3.menu-option
-                    p Enemy Team Builder
+                    p Enemy Team Counters
                 #friendly-team-btn.col-xs-3.menu-option
-                    p Friendly Team Builder
+                    p Friendly Team Picks
 
             #pick-hero-before.row.shadow-top.soft-bg
 
@@ -223,33 +224,47 @@ html
             #hero-stats-title.row
                 .col-xs-3
                 #hero-stats-name.col-xs-6.text-center
+                #days-select-div.col-xs-3.map-dropdown-div.text-center
+                    .days-select-top-div
+                        p Include data from:
+                    select#days-selection.form-control.days-dropdown
+                        option(value="7") Last 7 days
+                        option(value="30" selected) Last 30 days
 
             #hero-stats.row.text-center.soft-bg.shadow-top
-            
-                #hero-stats-menu.row
-                    .col-xs-12.text-center
-                        #matchups-btn.menu-btn
-                            p Matchups
-                        #counters-btn.menu-btn
-                            p Counters
-                        #teammates-btn.menu-btn
-                            p Teammates
-                        #maps-btn.menu-btn
-                            p Maps
 
-                #map-stats-menu.row
-                    .col-xs-12.text-center
-                        #offense-btn.menu-btn
-                            p Offense
-                        #defense-btn.menu-btn
-                            p Defense
-  
-                #beta.row.text-center
-                    .col-xs-12
-                        p Overmatch currently in Beta. <strong> Results may be inaccurate</strong> until the site collects enough votes. Thank you for helping! 
-                .row
-                    .col-xs-0.col-md-2
-                    #hero-stats-table.col-xs-12.col-md-8
+                .col-xs-12
+            
+                    #hero-stats-menu.row
+                        .col-xs-12.text-center
+                            #matchups-btn.menu-btn
+                                p Matchups
+                            #counters-btn.menu-btn
+                                p Counters
+                            #teammates-btn.menu-btn
+                                p Teammates
+                            #maps-btn.menu-btn
+                                p Maps
+
+                    #map-stats-menu.row
+                        .col-xs-12.text-center
+                            #offense-btn.menu-btn
+                                p Offense
+                            #defense-btn.menu-btn
+                                p Defense
+      
+                    #beta.row.text-center
+                        .col-xs-12
+                            p Overmatch currently in Beta. <strong> Results may be inaccurate</strong> until the site collects enough votes. Thank you for helping! 
+                    .row
+                        .col-xs-0.col-md-2
+                        #hero-stats-table.col-xs-12.col-md-8
+
+                    //- .row
+                    //-     .col-xs-0.col-md-2
+                    //-     #graph-div.col-xs-12.col-md-8
+                    //-         canvas(id="chart" width="400" height="250")
+
 
             #copyright.row.text-center
                 .col-xs-12
@@ -262,6 +277,7 @@ html
         script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
         script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
         script(src="//cdn.socket.io/socket.io-1.2.0.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js")
         script(src="js/libs/rangeslider.min.js")
         script(src="js/stats.js")
         script(src="js/team.js")

@@ -3,7 +3,7 @@ var client = {
 };
 
 var settings = {
-	days: 7
+	days: 30
 };
 
 var heroStats = {};

@@ -54,7 +54,9 @@ var soloGame = (function () {
 
         onSlide: function(position, value) {
             $("#solo-slide-val").html(value);
-            me.setQuote(value, hero.name);
+            if (hero) {
+                me.setQuote(value, hero.name);
+            }
         },
 
     });
