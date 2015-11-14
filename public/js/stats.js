@@ -39,7 +39,6 @@ var stats = (function () {
             var votes = '<div title="There are not enough votes to make this ranking significant!" class="row-votes col-xs-3 warning">' + data.num + '</div>';
         } else {
             var votes = '<div class="row-votes col-xs-3">' + data.num + '</div>';
-
         }
         
 
@@ -47,6 +46,11 @@ var stats = (function () {
     }
 
     me.writeHeader = function (type) {
+
+        if ((type) == 'friends') {
+            type ='teammates';
+        }
+
         var table = $("#hero-stats-table");
 
         if (stat_type === 'maps') {
@@ -147,6 +151,7 @@ var stats = (function () {
     // Populate results for the enemy counters and team picks section
     me.populateTeamStats = function (data) {
         stat_type = 'team';
+         $("#map-stats-menu").hide();
         $('#hero-stats').show();
         $('#hero-stats-title').show();
         $('#hero-stats-name').html('Results');
@@ -176,7 +181,7 @@ var stats = (function () {
         $('.pick-map-div').removeClass('map-selected');
     }
 
-    function setLoading(elem) {
+    me.setLoading = function (elem) {
         elem.html('Getting stats...');
 
     }
@@ -184,7 +189,7 @@ var stats = (function () {
     //-- Event Handlers --//
 
     $(".pick-hero-thumb").click(function () {
-        setLoading($('#hero-stats-name'));
+        me.setLoading($('#hero-stats-name'));
         clearMenuButtons();
         clearPicSelection();
         $(this).addClass('pic-selected');
@@ -196,7 +201,7 @@ var stats = (function () {
     });
 
     $(".pick-map-div").click(function () {
-        setLoading($('#hero-stats-name'));
+        me.setLoading($('#hero-stats-name'));
         clearMenuButtons();
         clearPicSelection();
         $(this).addClass('map-selected');
@@ -214,8 +219,6 @@ var stats = (function () {
         $("#pick-hero").show();
         $("#pick-team").hide();
         $("#pick-map").hide();
-        $('#hero-stats-title').hide();
-        $('#hero-stats').hide();
         clearBigMenuButtons();
         $(this).addClass('bigmenu-selected');
     });
@@ -224,8 +227,6 @@ var stats = (function () {
         $("#pick-map").show();
         $("#pick-team").hide();
         $("#pick-hero").hide();
-        $('#hero-stats-title').hide();
-        $('#hero-stats').hide();
         clearBigMenuButtons();
         $(this).addClass('bigmenu-selected');
     });
@@ -233,8 +234,6 @@ var stats = (function () {
     $('#team-counter-btn').click(function () {
         $("#pick-map").hide();
         $("#pick-team").hide();
-        $('#hero-stats-title').hide();
-        $('#hero-stats').hide();
         clearBigMenuButtons();
         $(this).addClass('bigmenu-selected');
     });
@@ -242,8 +241,6 @@ var stats = (function () {
     $('#friendly-team-btn').click(function () {
         $("#pick-map").hide();
         $("#pick-team").hide();
-        $('#hero-stats-title').hide();
-        $('#hero-stats').hide();
         clearBigMenuButtons();
         $(this).addClass('bigmenu-selected');
     });

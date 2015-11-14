@@ -15,9 +15,11 @@ html
     body
         #disconnect-alert.alert.alert-danger
             p Oops! We've lost your connection. Please refresh the page.
+
         .container
             .row
                 #header.col-xs-12.text-center
+                    include ribbon.html
                     #status-div
                     #title.row 
                         p OverMatch
@@ -222,9 +224,9 @@ html
                                         p SUBMIT
 
             #hero-stats-title.row
-                .col-xs-3
-                #hero-stats-name.col-xs-6.text-center
-                #days-select-div.col-xs-3.map-dropdown-div.text-center
+                .col-xs-0.col-md-3
+                #hero-stats-name.col-xs-12.col-md-6.text-center
+                #days-select-div.col-xs-12.col-md-3.map-dropdown-div.text-center
                     .days-select-top-div
                         p Include data from:
                     select#days-selection.form-control.days-dropdown

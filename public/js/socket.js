@@ -61,16 +61,25 @@ var socketHelper = (function () {
     socket.on('all-stats', function (data){
         heroStats = data;
         stats.populateHeroStats(data);
+        $('html,body').animate({
+           scrollTop: $("#hero-stats-title").offset().top
+        });
     });
 
     socket.on('map-stats', function (data){
         mapStats = data;
         stats.populateMapStats(data);
+        $('html,body').animate({
+           scrollTop: $("#hero-stats-title").offset().top
+        });
     });
 
     socket.on('team-picks-data', function (data){
         heroStats['team'] = data;
         stats.populateTeamStats(data);
+        $('html,body').animate({
+           scrollTop: $("#hero-stats-title").offset().top
+        });
     });
 
     socket.on('last-match', function (data){

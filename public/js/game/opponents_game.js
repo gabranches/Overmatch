@@ -6,17 +6,17 @@ var vsGame = (function () {
     var opponent;
 
     var ratingQuotes = [
-        "There's no chance that I would pick [hero] against [opponent].", 
-        "It's extremely unlikely that I would pick [hero] against [opponent].",
-        "Most of the time, I would not pick [hero] against [opponent].",
-        "I would not pick [hero] too often against [opponent].",
-        "I may pick [hero] against [opponent], but I think I will be at a slight disadvantage.",
-        "I don't know if [hero] is good against [opponent].<br />I think they are neural.<br />No opinion.",
-        "I may pick [hero] against [opponent] because of a slight advantage.",
-        "I would pick [hero] often against [opponent].",
-        "I would pick [hero] most of the time against [opponent].",
-        "I would pick [hero] almost always against [opponent].",
-        "I would pick [hero] 100% of the time against [opponent]."
+        "[hero] loses 100% of the time against [opponent].", 
+        "[hero] almost always loses against [opponent].",
+        "[hero] loses most of the time against [opponent].",
+        "[hero] loses often against [opponent].",
+        "[hero] would be slightly worse than [opponent].",
+        "I don't know if [hero] would do well.<br />I think they are neutral.<br />No opinion.",
+        "[hero] would be slightly better than [opponent].",
+        "[hero] wins often against [opponent].",
+        "[hero] wins most of the time against [opponent].",
+        "[hero] wins almost always against [opponent].",
+        "[hero] wins 100% of the time against [opponent]."
     ];
 
 
@@ -33,8 +33,8 @@ var vsGame = (function () {
     me.setupInterface = function (data) {
         hero = data.hero;
         opponent = data.opponent;
-        var questionText = 'How likely are you to pick <span class="hero">' +
-                            hero.name+'</span> with <span class="opponent">'+
+        var questionText = 'How do you think <span class="hero">' +
+                            hero.name+'</span> does against <span class="opponent">'+
                             opponent.name+'</span> on the other team?';
         $("#vs-title").html(questionText);
         $("#vs-hero-name").html('<span class="hero-subtitle">' + hero.name + '</span>');

@@ -57,7 +57,7 @@ var teamModule = (function () {
 
     $('#team-submit').click(function () {
 
-        setLoading($('#hero-stats-name'));
+        
 
         $('.hero-dropdown').each(function () {
             if ($(this).val() != '') {
@@ -73,6 +73,7 @@ var teamModule = (function () {
             $(this).html('Pick a hero!');
         } else {
             // Submit data
+            stats.setLoading($('#hero-stats-name'));
             $(this).html('Submitted!');
 
             me.picks.map = $('.map-dropdown').val();
