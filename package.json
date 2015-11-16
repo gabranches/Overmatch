@@ -1,7 +1,7 @@
 {
-  "name": "socket-chat-example",
-  "version": "0.0.1",
-  "description": "my first socket.io app",
+  "name": "OverMatch",
+  "version": "1.0.1",
+  "description": "OverMatch is a site where Overwatch players can vote on matchups and analyze the meta-game",
   "dependencies": {
     "ejs": "^2.3.4",
     "express": "^4.10.2",
