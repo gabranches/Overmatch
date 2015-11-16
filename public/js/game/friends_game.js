@@ -75,6 +75,12 @@ var teamGame = (function () {
         main.nextGame();
     });
 
+
+    $("#f-skip").on('click', function () {
+        main.nextGame();
+    });
+
+
     return me;
 
 }());

@@ -40,64 +40,64 @@ html
                     .row.matchup-title.shadow-top.soft-bg
                         #vs-title.col-xs-12
                     .row.matchup-game.soft-bg
-                        .col-xs-0.col-md-1
-                        #vs-hero.col-xs-4.col-md-3
+                        #vs-hero.col-xs-3
                             .row.text-center
                                 #vs-hero-img.char-img
                             .row
                                 #vs-hero-name.col-xs-12
                             
-                        .col-xs-4.col-md-4
+                        .col-xs-6
                             .row
                                 #vs-slide-val.slide-num
                             .row
                                 #vs-slide-quote.col-xs-12.slide-quote
                                 
-                        #vs-opponent.col-xs-4.col-md-3
+                        #vs-opponent.col-xs-3
                             .row
                                 #vs-opponent-img.char-img
                             .row
                                 #vs-opponent-name.col-xs-12
 
                     #slider-div.row.soft-bg
-                        .col-xs-1.col-md-4
-                        #vs-slide-div.col-xs-7.col-md-4
-                            input(id="vs-slider" type="range" min="0" max="10" step="1")
                         .col-xs-3.next-btn-wrapper
-                            #vs-next.next-btn-div.text-center
-                                button(class="btn" id="vs-next") Submit Vote
+                            button(class="btn" id="v-skip") Skip
+                        #vs-slide-div.col-xs-6
+                            input(id="vs-slider" type="range" min="0" max="10" step="1")
+
+                        #vs-next.col-xs-3.next-btn-div.text-center
+                            button(class="btn" id="vs-next") Submit
 
             #team-game-div.row
                 .col-xs-12.text-center
                     .row.matchup-title.shadow-top.soft-bg
                         #team-title.col-xs-12
                     .row.matchup-game.soft-bg
-                        .col-xs-0.col-md-1
-                        #team-hero.col-xs-4.col-md-3
+                        #team-hero.col-xs-3
                             .row.text-center
                                 #team-hero-img.char-img
                             .row
                                 #team-hero-name.col-xs-12
                             
-                        .col-xs-4.col-md-4
+                        .col-xs-6
                             .row
                                 #team-slide-val.slide-num
                             .row
                                 #team-slide-quote.col-xs-12.slide-quote
 
-                        #team-friend.col-xs-4.col-md-3
+                        #team-friend.col-xs-3
                             .row
                                 #team-friend-img.char-img
                             .row
                                 #team-friend-name.col-xs-12
 
                     #slider-div.row.soft-bg
-                        .col-xs-1.col-md-4
-                        #team-slide-div.col-xs-7.col-md-4
-                            input(id="team-slider" type="range" min="0" max="10" step="1")
                         .col-xs-3.next-btn-wrapper
-                            #team-next.next-btn-div.text-center
-                                button(class="btn" id="team-next") Submit Vote
+                            button(class="btn" id="f-skip") Skip
+                        #team-slide-div.col-xs-6
+                            input(id="team-slider" type="range" min="0" max="10" step="1")
+
+                        #team-next.col-xs-3.next-btn-div.text-center
+                            button(class="btn" id="team-next") Submit
 
 
             #solo-game-div.row
@@ -105,36 +105,36 @@ html
                     .row.matchup-title.shadow-top.soft-bg
                         #solo-title.col-xs-12
                     .row.matchup-game.soft-bg
-                        .col-xs-0.col-md-1
-                        #solo-hero.col-xs-4.col-md-3
+                        #solo-hero.col-xs-3
                             .row.text-center
                                 #solo-hero-img.char-img
                             .row
                                 #solo-hero-name.col-xs-12
                             
-                        .col-xs-4.col-md-4
+                        .col-xs-6
                             .row
                                 #solo-slide-val.slide-num
                             .row
                                 #solo-slide-quote.col-xs-12.slide-quote
                             
-                        #solo-map.col-xs-4.col-md-3
+                        #solo-map.col-xs-3
                             .row
                                 #solo-map-img.map-img
                             .row
                                 #solo-map-name.col-xs-12
 
                     #slider-div.row.soft-bg
-                        .col-xs-1.col-md-4
-                        #solo-slide-div.col-xs-7.col-md-4
+                        .col-xs-3.next-btn-wrapper
+                            button(class="btn" id="s-skip") Skip
+                        #solo-slide-div.col-xs-6
                             input(id="solo-slider" type="range" min="0" max="10" step="1")
-                        .col-xs-3.col-md-4next-btn-wrapper
-                            #solo-next.next-btn-div.text-center
-                                button(class="btn" id="solo-next") Submit Vote
+
+                        #solo-next.col-xs-3.next-btn-div.text-center
+                            button(class="btn" id="solo-next") Submit
                     
             #last-match.row.soft-bg.last-match-row.text-center
-                .col-xs-0.col-md-2
-                #last-match-table.col-xs-12.col-md-8
+                .col-xs-0.col-md-3
+                #last-match-table.col-xs-12.col-md-6
                     #last-match-results.col-xs-3
                         p Last Match:
                     #last-match-pics.col-xs-3

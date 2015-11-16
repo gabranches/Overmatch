@@ -1,6 +1,6 @@
  html {
  	height: 100%;
- 	min-width: 400px;
+ 	min-width: 530px;
  }
 
  body {
@@ -598,15 +598,15 @@ p {
 
 #last-match-table {
 	background-color: rgba(255, 255, 255, 0.06);
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 46px;
 	font-weight: bold;
 	border-radius: 4px;
 }
 
 #last-match-table img {
-	width: 45px;
-	height: 40px;
+	width: 30px;
+	height: 30px;
 	margin: 0 5px;
 }
 

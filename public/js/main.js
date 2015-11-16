@@ -24,7 +24,7 @@ var main = (function () {
 	}
 
 	me.pickGame = function () {
-		return Math.floor(Math.random() * 3.5);
+		return Math.floor(Math.random() * 3);
 	}
 
 	function loadGame (num) {

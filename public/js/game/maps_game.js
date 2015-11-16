@@ -76,6 +76,11 @@ var soloGame = (function () {
         main.nextGame();
     });
 
+    $("#s-skip").on('click', function () {
+        main.nextGame();
+    });
+
+
     return me;
 
 }());

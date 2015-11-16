@@ -72,6 +72,11 @@ var vsGame = (function () {
         main.nextGame();
     });
 
+
+    $("#v-skip").on('click', function () {
+        main.nextGame();
+    });
+
     return me;
 
 }());
