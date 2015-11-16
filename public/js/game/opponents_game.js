@@ -6,17 +6,17 @@ var vsGame = (function () {
     var opponent;
 
     var ratingQuotes = [
-        "[hero] loses 100% of the time against [opponent].", 
-        "[hero] almost always loses against [opponent].",
-        "[hero] loses most of the time against [opponent].",
-        "[hero] loses often against [opponent].",
-        "[hero] would be slightly worse than [opponent].",
-        "I don't know if [hero] would do well.<br />I think they are neutral.<br />No opinion.",
-        "[hero] would be slightly better than [opponent].",
-        "[hero] wins often against [opponent].",
-        "[hero] wins most of the time against [opponent].",
-        "[hero] wins almost always against [opponent].",
-        "[hero] wins 100% of the time against [opponent]."
+        "[hero] is always a bad choice with [opponent] on the other team.", 
+        "[hero] is almost always a bad choice with [opponent] on the other team.",
+        "[hero] is a bad choice most of the time with [opponent] on the other team.",
+        "[hero] is often a bad choice with [opponent] on the other team.",
+        "[hero] might not be a good choice with [opponent] on the other team.",
+        "I don't know if picking [hero] is a good or bad idea.<br />No opinion.",
+        "[hero] might be a good choice with [opponent] on the other team.",
+        "[hero] is often a good choice with [opponent] on the other team.",
+        "[hero] is a good choice most of the time with [opponent] on the other team.",
+        "[hero] is almost always a good choice with [opponent] on the other team.",
+        "[hero] is always a good choice with [opponent] on the other team."
     ];
 
 
@@ -33,9 +33,9 @@ var vsGame = (function () {
     me.setupInterface = function (data) {
         hero = data.hero;
         opponent = data.opponent;
-        var questionText = 'How do you think <span class="hero">' +
-                            hero.name+'</span> matches up against <span class="opponent">'+
-                            opponent.name+'</span>?';
+        var questionText = 'Would you recommend picking <span class="hero">' +
+                            hero.name+'</span> with <span class="opponent">'+
+                            opponent.name+'</span> on the other team?';
         $("#vs-title").html(questionText);
         $("#vs-hero-name").html('<span class="hero-subtitle">' + hero.name + '</span>');
         $("#vs-opponent-name").html('<span class="opponent-subtitle">' + opponent.name + '</span>');

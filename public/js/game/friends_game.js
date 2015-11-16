@@ -6,17 +6,17 @@ var teamGame = (function () {
     var opponent;
 
     var ratingQuotes = [
-        "They don't have any synergy and I would never pick [hero] with [opponent] on my team.", 
-        "They have terrible synergy and I would only pick [hero] with [opponent] in rare situations.",
-        "They have poor synergy and are actually a detriment to the team.",
-        "They have poor synergy, but may still be playable together ",
-        "They may have synergy, but only in specific situations.",
-        "I don't know if they work well together.<br />I think are neutral.<br />No opinion.",
-        "They may have a bit of synergy.",
-        "They have good synergy sometimes.",
-        "They have very good synergy in most games.",
-        "They have excellent synergy in almost all games.",
-        "They have perfect synergy and I would pick [hero] with [opponent] on my team every time."
+        "[hero] is always a bad choice with [opponent] on my team.", 
+        "[hero] is almost always a bad choice with [opponent] on my team.",
+        "[hero] is a bad choice most of the time with [opponent] on my team.",
+        "[hero] is often a bad choice with [opponent] on my team.",
+        "[hero] might not be a good choice with [opponent] on my team.",
+        "I don't know if picking [hero] is a good or bad idea.<br />No opinion.",
+        "[hero] might be a good choice with [opponent] on my team.",
+        "[hero] is often a good choice with [opponent] on my team.",
+        "[hero] is a good choice most of the time with [opponent] on my team.",
+        "[hero] is almost always a good choice with [opponent] on my team.",
+        "[hero] is always a good choice with [opponent] on my team."    
     ];
 
 
@@ -33,9 +33,9 @@ var teamGame = (function () {
     me.setupInterface = function (data) {
         hero = data.hero;
         opponent = data.opponent;
-        var questionText = 'Do you think <span class="hero">' +
-                            hero.name+'</span> has good synergy with <span class="friend">'+
-                            opponent.name+'</span>?';
+        var questionText = 'Would you recommend picking <span class="hero">' +
+                            hero.name+'</span> with <span class="friend">'+
+                            opponent.name+'</span> on your team?';
 
         $("#team-title").html(questionText);
         $("#team-hero-name").html('<span class="hero-subtitle">' + hero.name + '</span>');

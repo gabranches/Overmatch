@@ -6,17 +6,17 @@ var soloGame = (function () {
     var opponent;
 
     var ratingQuotes = [
-        "I would never pick [hero].", 
-        "I would only pick [hero] as an absolute last resort.",
-        "I think [hero] is weak in this situation.",
-        "I would not pick [hero] too often in this situation.",
-        "I think [hero] might not be good here, but I'll try to make it work.",
-        "I don't know if [hero] is good or bad in this situation.<br />No opinion.",
-        "I think [hero] might be good here.",
-        "I would pick [hero] often.",
-        "I would pick [hero] most of the time.",
-        "I think [hero] would be very strong in this situation.",
-        "[hero] would be a guaranteed pick."
+        "[hero] is always a bad choice in this situation.", 
+        "[hero] is almost always a bad choice in this situation.",
+        "[hero] is a bad choice most of the time in this situation.",
+        "[hero] is often a bad choice in this situation.",
+        "[hero] might not be a good choice in this situation.",
+        "I don't know if [hero] is good in this situation.<br />No opinion.",
+        "[hero] might be a good choice in this situation.",
+        "[hero] is often a good choice in this situation.",
+        "[hero] is a good choice most of the time in this situation.",
+        "[hero] is almost always a good choice in this situation.",
+        "[hero] is always a good choice in this situation."
     ];
 
 
@@ -32,7 +32,7 @@ var soloGame = (function () {
         hero = data.hero;
         opponent = data.opponent;
         strat = opponent.strat;
-        var questionText = 'How likely are you to pick <span class="hero">' +
+        var questionText = 'Do you recommend picking <span class="hero">' +
                             hero.name +'</span> on <span class="map">' +
                             opponent.name +' (' + opponent.type + ')' +'</span> while on <span class="strat">' +
                             strat + '</span>?';

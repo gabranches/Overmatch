@@ -569,6 +569,7 @@ p {
 #days-selection {
 	width: 100%;
 	font-size: 12px;
+	border-radius: 3px;
 }
 
 .map-dropdown {
