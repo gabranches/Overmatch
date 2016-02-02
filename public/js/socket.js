@@ -17,7 +17,7 @@ var socketHelper = (function () {
     }
 
     me.getSocketID = function() {
-        client.socketID = socket.io.engine.id;
+        client.socketID = '/#' + socket.io.engine.id;
         return socket.io.engine.id;
     }
 
@@ -26,7 +26,8 @@ var socketHelper = (function () {
 
     // Send client info to server
     socket.on('connect', function (err) { 
-        me.getSocketID()
+        console.log('connected');
+        me.getSocketID();
         $('#disconnect-alert').hide();
         socket.emit('user-connect', client);
         socket.emit('status-request', client);
@@ -40,21 +41,25 @@ var socketHelper = (function () {
 
     // Receive message from server
     socket.on('vs-data', function (data){
+        console.log('received game data');
         vsGame.setupInterface(data);
         main.attachGame(main.game);
     });
     
     socket.on('solo-data', function (data){
+        console.log('received game data');
         soloGame.setupInterface(data);
         main.attachGame(main.game);
     });
 
     socket.on('team-data', function (data){
+        console.log('received game data');
         teamGame.setupInterface(data);
         main.attachGame(main.game);
     });
 
     socket.on('status', function (data){
+        console.log('received status');
         $('#active-count').html('Active users: ' + data.num_active);
     });
 

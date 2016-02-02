@@ -57,6 +57,7 @@ app.get('/api/map_ids', function (request, response) {
 var minutes = 1, the_interval = minutes * 60 * 1000;
 setInterval(function() {
 	runAll();
+    console.log('writing files');
 }, the_interval);
 
 
