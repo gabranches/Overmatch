@@ -142,7 +142,9 @@ var stats = (function () {
     me.populateMapStats = function (data) {
         stat_type = 'mapList';
         $('#hero-stats').show();
-        $("#map-stats-menu").show();
+        if (data.map.type === 'Control') {
+            $("#map-stats-menu").hide();
+        }
         $("#hero-stats-menu").hide();
         $('#hero-stats-name').append('<img src="/images/maps/'+data.map.tag+'.jpg" />');
         $('#hero-stats-name').html(mapStats.map.name);
@@ -210,8 +212,12 @@ var stats = (function () {
         clearPicSelection();
         $(this).addClass('map-selected');
         map_tag = $(this).attr("data-tag");
+        map_num = $(this).attr("data-id");
         $("#hero-stats-title").show();
         $("#beta").show();
+        if (maps[map_num]['type'] === 'Control') {
+            map_strat = 'offense';
+        }
         map_id = mapTagToId.indexOf(map_tag + '-' + map_strat);
         socketHelper.emit('get-map-stats', {map: map_id, client: client, days: settings.days});
     });

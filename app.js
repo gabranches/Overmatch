@@ -7,14 +7,14 @@ var io = require('socket.io').listen(server);
 var ioConn = require('./lib/io.js')(io);
 var heroes = require('./setup/heroes.js');
 var maps = require('./setup/maps.js');
-var halfMaps =  maps.slice(0, Math.ceil(maps.length / 2));
 var runAll = require('./lib/generateStats.js');
 var path = require('path');
 global.appRoot = path.resolve(__dirname);
 var stats = require('./lib/stats.js')();
-var matchupsArr = stats.openStatsFile(30, 'matchups');
-var friendsArr = stats.openStatsFile(30, 'friends');
-var mapsArr = stats.openStatsFile(30, 'maps');
+// var matchupsArr = stats.openStatsFile(30, 'matchups');
+// var friendsArr = stats.openStatsFile(30, 'friends');
+// var mapsArr = stats.openStatsFile(30, 'maps');
+var mapsUnique =  stats.uniqueObjArr(maps, 'tag');
 
 //-- App Config --//
 
@@ -27,7 +27,7 @@ app.set('view engine', 'jade');
 app.get('/', function (request, response) {
     response.render('pages/index', {
     	heroes: heroes,
-     	maps: halfMaps
+     	maps: mapsUnique
      });
 });
 
@@ -57,7 +57,6 @@ app.get('/api/map_ids', function (request, response) {
 var minutes = 1, the_interval = minutes * 60 * 1000;
 setInterval(function() {
 	runAll();
-    console.log('writing files');
 }, the_interval);
 
 

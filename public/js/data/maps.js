@@ -126,5 +126,45 @@ var maps = [
         type: 'Capture',
         location: 'Russia',
         strat: 'defense'
-    } 
+    },
+    {
+        id: 16,
+        tag: 'ilios',
+        name: 'Ilios',
+        type: 'Control',
+        location: 'Greece',
+        strat: 'offense'
+    },
+    {
+        id: 17,
+        tag: 'lijiang',
+        name: 'Lijiang Tower',
+        type: 'Control',
+        location: 'China',
+        strat: 'offense'
+    },
+    {
+        id: 18,
+        tag: 'nepal',
+        name: 'Nepal',
+        type: 'Control',
+        location: 'Nepal',
+        strat: 'offense'
+    },
+    {
+        id: 19,
+        tag: 'route66',
+        name: 'Route 66',
+        type: 'Payload',
+        location: 'United States',
+        strat: 'offense'
+    },
+    {
+        id: 20,
+        tag: 'route66',
+        name: 'Route 66',
+        type: 'Payload',
+        location: 'United States',
+        strat: 'defense'
+    }
 ];
