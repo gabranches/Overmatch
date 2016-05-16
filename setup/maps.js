@@ -133,6 +133,7 @@ var maps = [
         name: 'Ilios',
         type: 'Control',
         location: 'Greece',
+        strat: 'offense'
     },
     {
         id: 17,
@@ -140,6 +141,7 @@ var maps = [
         name: 'Lijiang Tower',
         type: 'Control',
         location: 'China',
+        strat: 'offense'
     },
     {
         id: 18,
@@ -147,6 +149,7 @@ var maps = [
         name: 'Nepal',
         type: 'Control',
         location: 'Nepal',
+        strat: 'offense'
     },
     {
         id: 19,
@@ -154,6 +157,7 @@ var maps = [
         name: 'Route 66',
         type: 'Payload',
         location: 'United States',
+        strat: 'offense'
     },
     {
         id: 20,
