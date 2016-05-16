@@ -201,7 +201,6 @@ var stats = (function () {
         $(this).addClass('pic-selected');
         hero_id = $(this).attr("data-id");
         $("#hero-stats-title").show();
-        $("#beta").show();
         hero_id = heroes[hero_id].id;
         socketHelper.emit('get-all-stats', {hero: hero_id, client: client, days: settings.days});
     });
@@ -214,7 +213,6 @@ var stats = (function () {
         map_tag = $(this).attr("data-tag");
         map_num = $(this).attr("data-id");
         $("#hero-stats-title").show();
-        $("#beta").show();
         if (maps[map_num]['type'] === 'Control') {
             map_strat = 'offense';
         }

@@ -81,8 +81,6 @@ var teamModule = (function () {
 
             socketHelper.emit('team-picks', {client: client, picks: me.picks});
             me.picks.team = [];
-            $("#beta").show();
-
         }
         
         setTimeout(function () {

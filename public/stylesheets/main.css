@@ -26,21 +26,6 @@ p {
 	padding: 0;
 }
 
-
-#beta {
-	padding: 10px 30px;
-	color: black;
-	font-size: 14px;
-	background-color: rgb(255, 229, 99);
-	text-shadow: none;
-	line-height: 13px;
-	display: none;
-	-webkit-box-shadow: 0 4px 5px #000;
-	-moz-box-shadow: 0 4px 5px #000;
-	box-shadow: 0 4px 5px #000;
-	
-}
-
 #menu {
 	font-family: OverMatch;
     font-size: 25px;
